@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadenza Industries — Colour Cosmetics Manufacturing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    /* ═══════════════════════════
+       THEME TOKENS
+    ═══════════════════════════ */
+    :root {
+      --nav-h: 72px;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Jost', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg:          #0c0a0b;
+      --bg-deep:     #161012;
+      --bg-panel:    #1e181a;
+      --text:        #f2ede8;
+      --muted:       #8a7e7a;
+      --gold:        #c9a96e;
+      --gold-lt:     #e2c98a;
+      --border:      rgba(201,169,110,.18);
+      --nav-bg:      rgba(12,10,11,.94);
+      --input-bg:    rgba(255,255,255,.03);
+      --pattern:     rgba(201,169,110,.04);
+      --card-hover:  rgba(196,133,106,.08);
+      --about-frame: linear-gradient(135deg,#1e181a 0%,rgba(196,133,106,.15) 100%);
+      --mono-c:      rgba(201,169,110,.25);
+      --mono-tag:    rgba(201,169,110,.35);
+      --mob-bg:      rgba(12,10,11,.97);
+      --hero-base:   #0c0a0b;
+    }
+    [data-theme="light"] {
+      --bg:          #faf7f4;
+      --bg-deep:     #f2ede8;
+      --bg-panel:    #ede7e1;
+      --text:        #1a1416;
+      --muted:       #7a6e6a;
+      --gold:        #a8782a;
+      --gold-lt:     #c99a4e;
+      --border:      rgba(168,120,42,.22);
+      --nav-bg:      rgba(250,247,244,.96);
+      --input-bg:    rgba(0,0,0,.03);
+      --pattern:     rgba(168,120,42,.05);
+      --card-hover:  rgba(168,120,42,.07);
+      --about-frame: linear-gradient(135deg,#ede7e1 0%,rgba(196,133,106,.12) 100%);
+      --mono-c:      rgba(168,120,42,.2);
+      --mono-tag:    rgba(168,120,42,.4);
+      --mob-bg:      rgba(250,247,244,.98);
+      --hero-base:   #faf7f4;
+    }
+
+    /* ═══════════════════════════
+       BASE
+    ═══════════════════════════ */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      transition: background .35s, color .3s;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    /* ═══════════════════════════
+       NAVIGATION
+    ═══════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; gap: 1.5rem;
+      z-index: 300;
+      border-bottom: 1px solid transparent;
+      transition: background .4s, border-color .4s;
+    }
+    #navbar.scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-color: var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.45rem; font-weight: 300; letter-spacing: .12em;
+      color: var(--text); text-decoration: none; flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex; gap: 2.4rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color .3s; position: relative; white-space: nowrap;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* right cluster */
+    .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+
+    /* ── Theme Toggle ── */
+    .theme-toggle {
+      width: 48px; height: 26px; border-radius: 13px;
+      background: rgba(128,100,60,.2); border: 1px solid var(--border);
+      position: relative; cursor: pointer; flex-shrink: 0;
+      transition: background .3s;
+      /* ensure clickable */
+      -webkit-appearance: none; appearance: none;
+      outline: none;
+    }
+    .theme-toggle:focus-visible { outline: 2px solid var(--gold); }
+    .toggle-knob {
+      position: absolute; top: 4px; left: 4px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--gold); pointer-events: none;
+      transition: transform .3s ease;
+    }
+    [data-theme="light"] .toggle-knob { transform: translateX(22px); }
+    .toggle-icon-moon,
+    .toggle-icon-sun {
+      position: absolute; top: 50%; font-size: 9px; line-height: 1;
+      transform: translateY(-50%); pointer-events: none; user-select: none;
+    }
+    .toggle-icon-moon { left: 6px; }
+    .toggle-icon-sun  { right: 5px; }
+
+    .nav-cta {
+      font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+      background: var(--gold); color: #0c0a0b;
+      padding: .55rem 1.4rem; text-decoration: none;
+      transition: background .3s; white-space: nowrap; flex-shrink: 0;
+    }
+    [data-theme="light"] .nav-cta { color: #fff; }
+    .nav-cta:hover { background: var(--gold-lt); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px;
+      background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block; height: 1.5px; background: var(--text);
+      transition: transform .3s, opacity .3s; transform-origin: center;
+    }
+    .hamburger span:nth-child(1) { width: 24px; }
+    .hamburger span:nth-child(2) { width: 16px; }
+    .hamburger span:nth-child(3) { width: 24px; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 250;
+      background: var(--mob-bg); backdrop-filter: blur(20px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.6rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mob-link {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem,5vw,2.2rem); font-weight: 300; letter-spacing: .06em;
+      color: var(--text); text-decoration: none; transition: color .3s;
+    }
+    .mob-link:hover { color: var(--gold); }
+    .mob-divider { width: 36px; height: 1px; background: var(--border); }
+    .mob-cta {
+      margin-top: .8rem; font-family: var(--sans);
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      background: var(--gold); color: #0c0a0b;
+      padding: .85rem 2.2rem; text-decoration: none;
+    }
+    [data-theme="light"] .mob-cta { color: #fff; }
+
+    /* ═══════════════════════════
+       SCROLL OFFSET for fixed nav
+    ═══════════════════════════ */
+    #about, #products, #why, #process, #contact, #stats {
+      scroll-margin-top: var(--nav-h);
+    }
+
+    /* ═══════════════════════════
+       HERO
+    ═══════════════════════════ */
+    #hero {
+      min-height: 100vh; display: grid; place-items: center;
+      position: relative; overflow: hidden;
+      padding: calc(var(--nav-h) + 3rem) 5vw 4rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 70% 50%, rgba(196,133,106,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,169,110,.08) 0%, transparent 55%),
+        var(--bg);
+      transition: background .35s;
+    }
+    [data-theme="light"] .hero-bg {
+      background:
+        radial-gradient(ellipse 70% 60% at 70% 50%, rgba(168,120,42,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(196,133,106,.07) 0%, transparent 55%),
+        linear-gradient(160deg, #faf7f4, #f5ece5, #f8f4f0);
+    }
+    .hero-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(
+        90deg, var(--pattern) 0, var(--pattern) 1px, transparent 1px, transparent 80px
+      );
+    }
+    .hero-deco {
+      position: absolute; border-radius: 50%;
+      width: min(520px, 75vw); height: min(520px, 75vw);
+      border: 1px solid rgba(201,169,110,.1);
+      right: 4vw; top: 50%; transform: translateY(-50%);
+      animation: rotateSlow 30s linear infinite;
+      pointer-events: none;
+    }
+    .hero-deco::before { content:''; position:absolute; inset:30px; border:1px solid rgba(201,169,110,.07); border-radius:50%; }
+    .hero-deco::after  { content:''; position:absolute; inset:80px;  border:1px solid rgba(196,133,106,.1);  border-radius:50%; }
+    @keyframes rotateSlow { to { transform: translateY(-50%) rotate(360deg); } }
+
+    .hero-inner { position:relative; z-index:2; max-width:780px; width:100%; }
+    .hero-eyebrow {
+      font-size:.68rem; letter-spacing:.35em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:1.6rem;
+      display:flex; align-items:center; gap:.8rem;
+      opacity:0; animation: fadeUp .8s .2s forwards;
+    }
+    .hero-eyebrow::before { content:''; flex:0 0 32px; height:1px; background:var(--gold); }
+    .hero-headline {
+      font-family: var(--serif);
+      font-size:clamp(2.8rem,7vw,6.5rem); font-weight:300; line-height:1.05;
+      color:var(--text); opacity:0; animation: fadeUp .9s .35s forwards;
+    }
+    .hero-headline em { font-style:italic; color:var(--gold); }
+    .hero-sub {
+      margin-top:1.8rem; max-width:520px; line-height:1.8;
+      font-size:clamp(.88rem,1.4vw,1.05rem); font-weight:200; color:var(--muted);
+      opacity:0; animation: fadeUp .9s .5s forwards;
+    }
+    .hero-actions {
+      margin-top:2.6rem; display:flex; gap:1.2rem; flex-wrap:wrap;
+      opacity:0; animation: fadeUp .9s .65s forwards;
+    }
+    .btn-primary {
+      font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+      background:var(--gold); color:#0c0a0b;
+      padding:.95rem 2.2rem; text-decoration:none; display:inline-block;
+      transition:background .3s, transform .2s;
+    }
+    [data-theme="light"] .btn-primary { color:#fff; }
+    .btn-primary:hover { background:var(--gold-lt); transform:translateY(-1px); }
+    .btn-ghost {
+      font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--gold); border:1px solid var(--border);
+      padding:.95rem 2.2rem; text-decoration:none; display:inline-block;
+      transition:border-color .3s, color .3s;
+    }
+    .btn-ghost:hover { border-color:var(--gold); color:var(--gold-lt); }
+    .hero-scroll {
+      position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:.5rem;
+      opacity:0; animation: fadeIn 1s 1.2s forwards; pointer-events:none;
+    }
+    .hero-scroll span { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+    .scroll-line { width:1px; height:40px; background:var(--border); position:relative; overflow:hidden; }
+    .scroll-line::after {
+      content:''; position:absolute; top:-100%; left:0; right:0; bottom:100%;
+      background:var(--gold); animation:scrollDown 1.8s 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%  { top:-100%; bottom:100%; }
+      50% { top:0;     bottom:0; }
+      100%{ top:100%;  bottom:-100%; }
+    }
+
+    /* ═══════════════════════════
+       SHARED
+    ═══════════════════════════ */
+    section { padding: 6rem 5vw; }
+    .section-label {
+      font-size:.65rem; letter-spacing:.35em; text-transform:uppercase;
+      color:var(--gold); display:flex; align-items:center; gap:.8rem; margin-bottom:1rem;
+    }
+    .section-label::before { content:''; flex:0 0 24px; height:1px; background:var(--gold); }
+    .section-title {
+      font-family: var(--serif);
+      font-size:clamp(1.8rem,4vw,3.4rem); font-weight:300; line-height:1.15; color:var(--text);
+    }
+    .section-title em { font-style:italic; color:var(--gold); }
+    .divider { width:60px; height:1px; background:var(--gold); margin:1.6rem 0; }
+    .body-copy { font-size:1rem; font-weight:200; line-height:1.85; color:var(--muted); margin-bottom:1.2rem; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s, transform .8s; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ═══════════════════════════
+       STATS
+    ═══════════════════════════ */
+    #stats {
+      padding:3.5rem 5vw;
+      background:var(--bg-panel);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+    .stat-item { padding:2rem 3vw; border-right:1px solid var(--border); }
+    .stat-item:last-child { border-right:none; }
+    .stat-num {
+      font-family:var(--serif);
+      font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--gold); line-height:1;
+    }
+    .stat-label { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-top:.5rem; }
+
+    /* ═══════════════════════════
+       ABOUT
+    ═══════════════════════════ */
+    #about { display:grid; grid-template-columns:1fr 1fr; gap:6vw; align-items:center; }
+    .about-visual { position:relative; height:520px; }
+    .about-frame {
+      position:absolute; inset:0;
+      background:var(--about-frame); border:1px solid var(--border);
+    }
+    .about-frame::before {
+      content:''; position:absolute; top:20px; right:20px; bottom:-20px; left:-20px;
+      border:1px solid rgba(201,169,110,.1); z-index:-1;
+    }
+    .about-pattern {
+      position:absolute; inset:0;
+      background-image:
+        repeating-linear-gradient(45deg, var(--pattern) 0,var(--pattern) 1px,transparent 1px,transparent 20px),
+        repeating-linear-gradient(-45deg,var(--pattern) 0,var(--pattern) 1px,transparent 1px,transparent 20px);
+    }
+    .about-center-deco {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem;
+    }
+    .deco-monogram { font-family:var(--serif); font-size:5rem; font-weight:300; color:var(--mono-c); line-height:1; letter-spacing:.05em; }
+    .deco-tagline  { font-size:.65rem; letter-spacing:.35em; text-transform:uppercase; color:var(--mono-tag); }
+    .about-badge {
+      position:absolute; bottom:2rem; right:2rem;
+      background:var(--gold); color:#0c0a0b;
+      padding:.9rem 1.4rem; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase;
+    }
+    [data-theme="light"] .about-badge { color:#fff; }
+    .about-pillars { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:2rem; }
+    .pillar {
+      padding:1.2rem 1.4rem; border:1px solid var(--border);
+      transition:border-color .3s, background .3s;
+    }
+    .pillar:hover { border-color:var(--gold); background:var(--card-hover); }
+    .pillar-title { font-family:var(--serif); font-size:1rem; color:var(--gold); margin-bottom:.3rem; }
+    .pillar-copy  { font-size:.78rem; color:var(--muted); line-height:1.6; }
+
+    /* ═══════════════════════════
+       PRODUCTS
+    ═══════════════════════════ */
+    #products { background:var(--bg-deep); }
+    .products-header {
+      display:flex; justify-content:space-between; align-items:flex-end;
+      margin-bottom:3.5rem; gap:1.5rem; flex-wrap:wrap;
+    }
+    .products-grid {
+      display:grid; grid-template-columns:repeat(5,1fr);
+      gap:1.5px; background:var(--border); border:1px solid var(--border);
+    }
+    .product-card {
+      background:var(--bg-panel); padding:2.4rem 1.6rem 1.8rem;
+      display:flex; flex-direction:column; position:relative; overflow:hidden;
+      transition:background .4s;
+    }
+    .product-card::before {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+      background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .4s;
+    }
+    .product-card:hover { background:var(--card-hover); }
+    .product-card:hover::before { transform:scaleX(1); }
+    .product-icon { width:48px; height:48px; margin-bottom:1.6rem; }
+    .product-name { font-family:var(--serif); font-size:1.35rem; font-weight:300; color:var(--text); margin-bottom:.6rem; }
+    .product-desc { font-size:.78rem; font-weight:200; line-height:1.7; color:var(--muted); flex:1; }
+    .product-tag {
+      margin-top:1.5rem; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--gold); display:flex; align-items:center; gap:.5rem;
+    }
+    .product-tag::before { content:''; flex:0 0 16px; height:1px; background:var(--gold); }
+
+    /* ═══════════════════════════
+       WHY CADENZA
+    ═══════════════════════════ */
+    #why { background:var(--bg); position:relative; overflow:hidden; }
+    .why-bg-text {
+      position:absolute; right:-2vw; top:50%; transform:translateY(-50%);
+      font-family:var(--serif);
+      font-size:clamp(6rem,18vw,18rem); font-weight:300;
+      color:var(--pattern); pointer-events:none; white-space:nowrap; line-height:1;
+    }
+    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:5vw; position:relative; z-index:1; }
+    .why-features { display:flex; flex-direction:column; }
+    .feature-row {
+      display:grid; grid-template-columns:56px 1fr; gap:1.4rem;
+      padding:1.6rem 0; border-bottom:1px solid var(--border);
+    }
+    .feature-row:first-child { border-top:1px solid var(--border); }
+    .feature-num   { font-family:var(--serif); font-size:2rem; font-weight:300; color:var(--border); line-height:1; }
+    .feature-title { font-family:var(--serif); font-size:1.1rem; color:var(--text); margin-bottom:.35rem; }
+    .feature-copy  { font-size:.81rem; color:var(--muted); line-height:1.7; }
+
+    /* ═══════════════════════════
+       PROCESS
+    ═══════════════════════════ */
+    #process { background:var(--bg-panel); }
+    .process-steps {
+      display:grid; grid-template-columns:repeat(5,1fr);
+      margin-top:4rem; position:relative;
+    }
+    .process-steps::before {
+      content:''; position:absolute; top:32px; left:10%; right:10%; height:1px;
+      background:linear-gradient(90deg,transparent,var(--border),var(--gold),var(--border),transparent);
+    }
+    .step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 1rem; }
+    .step-num {
+      width:64px; height:64px; border:1px solid var(--gold);
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--serif); font-size:1.4rem; color:var(--gold);
+      background:var(--bg-panel); position:relative; z-index:1;
+      margin-bottom:1.4rem; transition:background .3s, color .3s;
+    }
+    .step:hover .step-num { background:var(--gold); color:#0c0a0b; }
+    [data-theme="light"] .step:hover .step-num { color:#fff; }
+    .step-title { font-family:var(--serif); font-size:1rem; color:var(--text); margin-bottom:.5rem; }
+    .step-copy  { font-size:.76rem; color:var(--muted); line-height:1.6; }
+
+    /* ═══════════════════════════
+       CONTACT
+    ═══════════════════════════ */
+    #contact { background:var(--bg-deep); display:grid; grid-template-columns:1fr 1fr; gap:6vw; align-items:start; }
+    .contact-details { display:flex; flex-direction:column; gap:.9rem; margin-top:2rem; }
+    .contact-detail { display:flex; align-items:flex-start; gap:1rem; font-size:.82rem; color:var(--muted); line-height:1.6; }
+    .contact-detail-icon {
+      width:32px; height:32px; border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; margin-top:2px;
+    }
+    .contact-detail-icon svg { stroke:var(--gold); }
+    .contact-form { display:flex; flex-direction:column; gap:1.2rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .form-group { display:flex; flex-direction:column; gap:.5rem; }
+    .form-label { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+    .form-input,.form-textarea,.form-select {
+      background:var(--input-bg); border:1px solid var(--border);
+      color:var(--text); font-family:var(--sans); font-size:.88rem; font-weight:300;
+      padding:.85rem 1rem; outline:none; transition:border-color .3s; width:100%;
+    }
+    .form-input::placeholder,.form-textarea::placeholder { color:var(--muted); opacity:.5; }
+    .form-input:focus,.form-textarea:focus,.form-select:focus { border-color:var(--gold); }
+    .form-select option { background:var(--bg-panel); color:var(--text); }
+    .form-textarea { resize:vertical; min-height:120px; }
+    .form-submit {
+      font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+      background:var(--gold); color:#0c0a0b;
+      border:none; padding:1rem 2.2rem; cursor:pointer;
+      font-family:var(--sans); transition:background .3s; align-self:flex-start;
+    }
+    [data-theme="light"] .form-submit { color:#fff; }
+    .form-submit:hover { background:var(--gold-lt); }
+
+    /* ═══════════════════════════
+       FOOTER
+    ═══════════════════════════ */
+    footer {
+      background:var(--bg); border-top:1px solid var(--border);
+      padding:2.5rem 5vw;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:1.5rem; flex-wrap:wrap;
+    }
+    .footer-logo { font-family:var(--serif); font-size:1.3rem; font-weight:300; letter-spacing:.1em; color:var(--text); }
+    .footer-logo span { color:var(--gold); }
+    .footer-copy  { font-size:.72rem; color:var(--muted); }
+    .footer-links { display:flex; gap:2rem; flex-wrap:wrap; }
+    .footer-links a {
+      font-size:.7rem; letter-spacing:.15em; text-transform:uppercase;
+      color:var(--muted); text-decoration:none; transition:color .3s;
+    }
+    .footer-links a:hover { color:var(--gold); }
+
+    /* ═══════════════════════════
+       KEYFRAMES
+    ═══════════════════════════ */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+
+    /* ═══════════════════════════
+       RESPONSIVE — TABLET ≤ 960px
+    ═══════════════════════════ */
+    @media (max-width: 960px) {
+      .nav-links,.nav-cta { display:none; }
+      .hamburger { display:flex; }
+
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .stat-item:nth-child(2) { border-right:none; }
+      .stat-item:nth-child(3) { border-top:1px solid var(--border); }
+      .stat-item:nth-child(4) { border-top:1px solid var(--border); border-right:none; }
+
+      #about { grid-template-columns:1fr; }
+      .about-visual { height:260px; }
+      .about-frame::before { display:none; }
+
+      .products-grid { grid-template-columns:1fr 1fr; }
+
+      .why-grid { grid-template-columns:1fr; }
+      .why-bg-text { display:none; }
+
+      .process-steps { grid-template-columns:1fr 1fr; gap:2.5rem 1.5rem; }
+      .process-steps::before { display:none; }
+      .step { align-items:flex-start; text-align:left; }
+
+      #contact { grid-template-columns:1fr; }
+
+      footer { flex-direction:column; align-items:flex-start; }
+    }
+
+    /* ═══════════════════════════
+       RESPONSIVE — MOBILE ≤ 520px
+    ═══════════════════════════ */
+    @media (max-width: 520px) {
+      section { padding:4rem 5vw; }
+      #stats   { padding:2.5rem 5vw; }
+      .hero-deco { width:200px; height:200px; right:-20px; opacity:.4; }
+      .about-pillars { grid-template-columns:1fr; }
+      .products-grid { grid-template-columns:1fr; }
+      .process-steps { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .hero-actions { flex-direction:column; align-items:flex-start; gap:.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mob-link" href="#about"    onclick="closeMob()">About</a>
+  <div class="mob-divider"></div>
+  <a class="mob-link" href="#products" onclick="closeMob()">Products</a>
+  <div class="mob-divider"></div>
+  <a class="mob-link" href="#why"      onclick="closeMob()">Why Us</a>
+  <div class="mob-divider"></div>
+  <a class="mob-link" href="#process"  onclick="closeMob()">Process</a>
+  <div class="mob-divider"></div>
+  <a class="mob-link" href="#contact"  onclick="closeMob()">Contact</a>
+  <a class="mob-cta"  href="#contact"  onclick="closeMob()">Partner With Us</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">Cadenza <span>Industries</span></a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle light / dark mode" aria-label="Toggle theme">
+      <span class="toggle-icon-moon">🌙</span>
+      <span class="toggle-icon-sun">☀️</span>
+      <span class="toggle-knob"></span>
+    </button>
+    <a class="nav-cta" href="#contact">Partner With Us</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Precision Cosmetics Manufacturing</p>
+    <h1 class="hero-headline">Where <em>Colour</em><br>Meets Craft</h1>
+    <p class="hero-sub">Cadenza Industries is a specialist manufacturer of premium colour cosmetics. We partner with beauty brands to bring their vision to life — from formulation to finished product.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#products">Explore Products</a>
+      <a class="btn-ghost"   href="#contact">Request Quotation</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal"><div class="stat-num">15+</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat-item reveal"><div class="stat-num">200+</div><div class="stat-label">Global Brand Partners</div></div>
+    <div class="stat-item reveal"><div class="stat-num">5</div><div class="stat-label">Core Product Lines</div></div>
+    <div class="stat-item reveal"><div class="stat-num">ISO</div><div class="stat-label">Certified Facilities</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-frame">
+      <div class="about-pattern"></div>
+      <div class="about-center-deco">
+        <div class="deco-monogram">CI</div>
+        <div class="deco-tagline">Est. 2009 · Mumbai, India</div>
+      </div>
+      <div class="about-badge">Quality First</div>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">Crafting <em>Beauty</em><br>at Scale</h2>
+    <div class="divider"></div>
+    <p class="body-copy">Cadenza Industries was founded with a singular mission: to give beauty entrepreneurs and established brands alike access to world-class cosmetics manufacturing. We combine rigorous science with artisanal precision to deliver colour cosmetics that perform.</p>
+    <p class="body-copy">Our state-of-the-art production facility is equipped for high-volume runs as well as small-batch development, ensuring every partner receives the same level of dedication — regardless of order size.</p>
+    <div class="about-pillars">
+      <div class="pillar"><div class="pillar-title">R&amp;D Excellence</div><div class="pillar-copy">In-house formulation chemists developing cutting-edge cosmetic compounds.</div></div>
+      <div class="pillar"><div class="pillar-title">GMP Compliance</div><div class="pillar-copy">Fully compliant manufacturing following Good Manufacturing Practices.</div></div>
+      <div class="pillar"><div class="pillar-title">Custom Shades</div><div class="pillar-copy">Proprietary colour-matching technology for bespoke pigment development.</div></div>
+      <div class="pillar"><div class="pillar-title">Private Label</div><div class="pillar-copy">End-to-end white-label solutions from concept to branded packaging.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div class="reveal">
+      <p class="section-label">Our Product Lines</p>
+      <h2 class="section-title">Five Categories.<br><em>Infinite Possibilities.</em></h2>
+    </div>
+    <a class="btn-ghost reveal" href="#contact">Request Catalogue</a>
+  </div>
+  <div class="products-grid">
+    <div class="product-card reveal">
+      <div class="product-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="4" y1="32" x2="40" y2="12" stroke="#c9a96e" stroke-width="1.5"/><circle cx="40" cy="12" r="3" stroke="#c9a96e" stroke-width="1.2"/><line x1="4" y1="32" x2="2" y2="38" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="product-name">Eyeliner</div>
+      <div class="product-desc">Liquid, gel, and kohl eyeliners engineered for precise application and lasting wear. Available in pencil, pen, and pot formats with long-wear, waterproof variants.</div>
+      <div class="product-tag">Explore Line</div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="6" width="12" height="28" rx="6" stroke="#c9a96e" stroke-width="1.2"/><line x1="10" y1="40" x2="38" y2="40" stroke="#c9a96e" stroke-width="1.2"/><line x1="24" y1="34" x2="24" y2="40" stroke="#c9a96e" stroke-width="1.2"/></svg></div>
+      <div class="product-name">Mascara</div>
+      <div class="product-desc">Volumising, lengthening, and curling mascaras formulated with advanced film-forming polymers. Tubing, waterproof, and natural fibre formulations available.</div>
+      <div class="product-tag">Explore Line</div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="28" rx="16" ry="8" stroke="#c9a96e" stroke-width="1.2"/><path d="M8 28C8 20 40 20 40 28" stroke="#c9a96e" stroke-width="1.2" fill="none"/><circle cx="24" cy="20" r="4" stroke="#c9a96e" stroke-width="1.2"/></svg></div>
+      <div class="product-name">Kajal</div>
+      <div class="product-desc">Richly pigmented kohl kajal pencils for intense, smudgeable definition. Traditional formulations alongside modern long-wear versions with conditioning ingredients.</div>
+      <div class="product-tag">Explore Line</div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="28" width="16" height="14" rx="1" stroke="#c9a96e" stroke-width="1.2"/><path d="M16 28L16 18Q24 10 32 18L32 28" stroke="#c9a96e" stroke-width="1.2" fill="none"/></svg></div>
+      <div class="product-name">Lipstick</div>
+      <div class="product-desc">A comprehensive range of bullet lipsticks — matte, satin, cream, and metallic finishes. Custom shade development with superior colour payoff and comfortable wear.</div>
+      <div class="product-tag">Explore Line</div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="36" height="26" rx="2" stroke="#c9a96e" stroke-width="1.2"/><rect x="6" y="8" width="36" height="8" rx="2" stroke="#c9a96e" stroke-width="1.2"/><circle cx="24" cy="27" r="8" stroke="#c9a96e" stroke-width="1.2"/><circle cx="24" cy="27" r="3" stroke="#c9a96e" stroke-width="1" stroke-dasharray="2 2"/></svg></div>
+      <div class="product-name">Compact Powder</div>
+      <div class="product-desc">Pressed compact powders delivering buildable coverage and a flawless finish. Foundation, setting, and bronzing variants with bespoke shade development.</div>
+      <div class="product-tag">Explore Line</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CADENZA -->
+<section id="why">
+  <div class="why-bg-text">Cadenza</div>
+  <div class="why-grid">
+    <div class="why-intro reveal">
+      <p class="section-label">Why Partner With Us</p>
+      <h2 class="section-title">The <em>Standard</em><br>Your Brand Deserves</h2>
+      <div class="divider"></div>
+      <p class="body-copy">In the competitive beauty market, manufacturing quality is your invisible signature. Cadenza Industries gives your brand the technical foundation to deliver products customers trust, repurchase, and recommend.</p>
+      <p class="body-copy">From minimum order quantities that support startups to dedicated production lines for established brands, we scale with your ambition.</p>
+      <a class="btn-primary" href="#contact" style="margin-top:1.5rem;display:inline-block;">Start a Conversation</a>
+    </div>
+    <div class="why-features reveal">
+      <div class="feature-row"><div class="feature-num">01</div><div class="feature-content"><div class="feature-title">Bespoke Formulation</div><div class="feature-copy">Our chemists develop custom formulas tailored to your brand's unique performance targets, ingredient preferences, and positioning.</div></div></div>
+      <div class="feature-row"><div class="feature-num">02</div><div class="feature-content"><div class="feature-title">Regulatory Expertise</div><div class="feature-copy">We handle compliance documentation for domestic and export markets, including EU, US FDA, and GCC markets.</div></div></div>
+      <div class="feature-row"><div class="feature-num">03</div><div class="feature-content"><div class="feature-title">Packaging Solutions</div><div class="feature-copy">Comprehensive packaging procurement and customisation services — from component sourcing to branded secondary packaging.</div></div></div>
+      <div class="feature-row"><div class="feature-num">04</div><div class="feature-content"><div class="feature-title">Flexible MOQ</div><div class="feature-copy">We offer competitive minimum order quantities — enabling fast brand launches without tying up capital in excess inventory.</div></div></div>
+      <div class="feature-row"><div class="feature-num">05</div><div class="feature-content"><div class="feature-title">Quality Assurance</div><div class="feature-copy">Multi-stage QC processes ensure every batch meets our strict stability, safety, and colour-accuracy benchmarks before dispatch.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 1rem;">
+    <p class="section-label" style="justify-content:center;">How We Work</p>
+    <h2 class="section-title">From Concept<br>to <em>Shelf-Ready</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">01</div><div class="step-title">Consultation</div><div class="step-copy">We understand your brand vision, target market, and product specifications in depth.</div></div>
+    <div class="step reveal"><div class="step-num">02</div><div class="step-title">Formulation</div><div class="step-copy">Our R&amp;D lab develops and refines custom formulas until performance benchmarks are met.</div></div>
+    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Sampling</div><div class="step-copy">Pre-production samples sent for your approval — shade, texture, and packaging assessment.</div></div>
+    <div class="step reveal"><div class="step-num">04</div><div class="step-title">Production</div><div class="step-copy">Full-scale manufacturing under strict GMP conditions with real-time quality monitoring.</div></div>
+    <div class="step reveal"><div class="step-num">05</div><div class="step-title">Delivery</div><div class="step-copy">Finished, tested, and packaged products dispatched to your warehouse or directly to market.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Build<br>Something <em>Beautiful</em></h2>
+    <div class="divider"></div>
+    <p class="body-copy">Whether you're launching your first product line or scaling an established brand, we'd love to hear about your manufacturing needs. Our team will respond within one business day.</p>
+    <div class="contact-details">
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>H-225, Saki Vihar Rd, Ansa Industrial Estate, Chandivali, Saki Naka, Mumbai, Maharashtra 400072, India</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.06 2.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.143.527.332 1.042.56 1.54a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.498.228 1.013.417 1.54.56A2 2 0 0122 14.92v2z"/></svg>
+        </div>
+        <span>+91 22 4900 7700</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <span>b2b@cadenzaindustries.com</span>
+      </div>
+    </div>
+  </div>
+
+  <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Jane Smith"/></div>
+      <div class="form-group"><label class="form-label">Company Name</label><input class="form-input" type="text" placeholder="Beauty Brand Co."/></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@yourcompany.com"/></div>
+      <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+91 98000 00000"/></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Product Category of Interest</label>
+      <select class="form-select">
+        <option value="" disabled selected>Select a product line</option>
+        <option>Eyeliner</option><option>Mascara</option><option>Kajal</option>
+        <option>Lipstick</option><option>Compact Powder</option><option>Multiple Product Lines</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Tell Us About Your Project</label>
+      <textarea class="form-textarea" placeholder="Describe your product requirements, estimated volumes, timeline, and any special formulation needs…"></textarea>
+    </div>
+    <button class="form-submit" type="submit">Send Enquiry →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Cadenza <span>Industries</span></div>
+  <div class="footer-copy">© 2025 Cadenza Industries Pvt. Ltd. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Certifications</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── 1. Theme toggle ── */
+  var html       = document.documentElement;
+  var toggleBtn  = document.getElementById('themeToggle');
+
+  // restore saved preference
+  var saved = localStorage.getItem('cadenza-theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+
+  toggleBtn.addEventListener('click', function () {
+    var current = html.getAttribute('data-theme');
+    var next    = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('cadenza-theme', next);
+  });
+
+  /* ── 2. Navbar scroll class ── */
+  var navbar = document.getElementById('navbar');
+  function onScroll() {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load
+
+  /* ── 3. Smooth scroll for ALL anchor links ── */
+  document.addEventListener('click', function (e) {
+    var anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    var id = anchor.getAttribute('href');
+    if (id === '#') return;
+    var target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var navH   = navbar.offsetHeight;
+    var top    = target.getBoundingClientRect().top + window.scrollY - navH;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+
+  /* ── 4. Mobile menu ── */
+  var hamburger  = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', function () {
+    var isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  window.closeMob = function () {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMob();
+  });
+
+  /* ── 5. Scroll reveal ── */
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function () {
+          entry.target.classList.add('visible');
+        }, i * 70);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    observer.observe(el);
+  });
+
+  /* ── 6. Form submit ── */
+  window.handleSubmit = function (e) {
+    e.preventDefault();
+    var btn  = e.target.querySelector('.form-submit');
+    var orig = btn.textContent;
+    btn.textContent = 'Enquiry Sent ✓';
+    btn.style.background = '#7aa36e';
+    btn.style.color = '#fff';
+    setTimeout(function () {
+      btn.textContent = orig;
+      btn.style.background = '';
+      btn.style.color = '';
+      e.target.reset();
+    }, 3000);
+  };
+
+})();
+</script>
+</body>
+</html>
