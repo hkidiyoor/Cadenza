@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,9 +15,6 @@
       --nav-h: 72px;
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans:  'Jost', sans-serif;
-    }
-
-    [data-theme="dark"] {
       --bg:          #0c0a0b;
       --bg-deep:     #161012;
       --bg-panel:    #1e181a;
@@ -36,25 +33,7 @@
       --mob-bg:      rgba(12,10,11,.97);
       --hero-base:   #0c0a0b;
     }
-    [data-theme="light"] {
-      --bg:          #faf7f4;
-      --bg-deep:     #f2ede8;
-      --bg-panel:    #ede7e1;
-      --text:        #1a1416;
-      --muted:       #5a4e4a;
-      --gold:        #a8782a;
-      --gold-lt:     #c99a4e;
-      --border:      rgba(168,120,42,.22);
-      --nav-bg:      rgba(250,247,244,.96);
-      --input-bg:    rgba(0,0,0,.03);
-      --pattern:     rgba(168,120,42,.05);
-      --card-hover:  rgba(168,120,42,.07);
-      --about-frame: linear-gradient(135deg,#ede7e1 0%,rgba(196,133,106,.12) 100%);
-      --mono-c:      rgba(168,120,42,.2);
-      --mono-tag:    rgba(168,120,42,.4);
-      --mob-bg:      rgba(250,247,244,.98);
-      --hero-base:   #faf7f4;
-    }
+
 
     /* ═══════════════════════════
        BASE
@@ -120,31 +99,7 @@
     /* right cluster */
     .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
 
-    /* ── Theme Toggle ── */
-    .theme-toggle {
-      width: 48px; height: 26px; border-radius: 13px;
-      background: rgba(128,100,60,.2); border: 1px solid var(--border);
-      position: relative; cursor: pointer; flex-shrink: 0;
-      transition: background .3s;
-      /* ensure clickable */
-      -webkit-appearance: none; appearance: none;
-      outline: none;
-    }
-    .theme-toggle:focus-visible { outline: 2px solid var(--gold); }
-    .toggle-knob {
-      position: absolute; top: 4px; left: 4px;
-      width: 16px; height: 16px; border-radius: 50%;
-      background: var(--gold); pointer-events: none;
-      transition: transform .3s ease;
-    }
-    [data-theme="light"] .toggle-knob { transform: translateX(22px); }
-    .toggle-icon-moon,
-    .toggle-icon-sun {
-      position: absolute; top: 50%; font-size: 9px; line-height: 1;
-      transform: translateY(-50%); pointer-events: none; user-select: none;
-    }
-    .toggle-icon-moon { left: 6px; }
-    .toggle-icon-sun  { right: 5px; }
+
 
     .nav-cta {
       font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
@@ -152,7 +107,6 @@
       padding: .55rem 1.4rem; text-decoration: none;
       transition: background .3s; white-space: nowrap; flex-shrink: 0;
     }
-    [data-theme="light"] .nav-cta { color: #fff; }
     .nav-cta:hover { background: var(--gold-lt); }
 
     /* Hamburger */
@@ -195,7 +149,6 @@
       background: var(--gold); color: #0c0a0b;
       padding: .85rem 2.2rem; text-decoration: none;
     }
-    [data-theme="light"] .mob-cta { color: #fff; }
 
     /* ═══════════════════════════
        SCROLL OFFSET for fixed nav
@@ -220,12 +173,7 @@
         var(--bg);
       transition: background .35s;
     }
-    [data-theme="light"] .hero-bg {
-      background:
-        radial-gradient(ellipse 70% 60% at 70% 50%, rgba(168,120,42,.08) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(196,133,106,.07) 0%, transparent 55%),
-        linear-gradient(160deg, #faf7f4, #f5ece5, #f8f4f0);
-    }
+
     .hero-lines {
       position: absolute; inset: 0; pointer-events: none;
       background-image: repeating-linear-gradient(
@@ -273,7 +221,6 @@
       padding:.95rem 2.2rem; text-decoration:none; display:inline-block;
       transition:background .3s, transform .2s;
     }
-    [data-theme="light"] .btn-primary { color:#fff; }
     .btn-primary:hover { background:var(--gold-lt); transform:translateY(-1px); }
     .btn-ghost {
       font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
@@ -365,7 +312,6 @@
       background:var(--gold); color:#0c0a0b;
       padding:.9rem 1.4rem; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase;
     }
-    [data-theme="light"] .about-badge { color:#fff; }
     .about-pillars { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:2rem; }
     .pillar {
       padding:1.2rem 1.4rem; border:1px solid var(--border);
@@ -449,7 +395,6 @@
       margin-bottom:1.4rem; transition:background .3s, color .3s;
     }
     .step:hover .step-num { background:var(--gold); color:#0c0a0b; }
-    [data-theme="light"] .step:hover .step-num { color:#fff; }
     .step-title { font-family:var(--serif); font-size:1rem; color:var(--text); margin-bottom:.5rem; }
     .step-copy  { font-size:.76rem; color:var(--muted); line-height:1.6; }
 
@@ -566,11 +511,6 @@
   </ul>
 
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" title="Toggle light / dark mode" aria-label="Toggle theme">
-      <span class="toggle-icon-moon">🌙</span>
-      <span class="toggle-icon-sun">☀️</span>
-      <span class="toggle-knob"></span>
-    </button>
     <a class="nav-cta" href="#contact">Partner With Us</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -624,7 +564,6 @@
     <p class="body-copy">Our state-of-the-art production facility is equipped for high-volume runs as well as small-batch development, ensuring every partner receives the same level of dedication — regardless of order size.</p>
     <div class="about-pillars">
       <div class="pillar"><div class="pillar-title">R&amp;D Excellence</div><div class="pillar-copy">In-house formulation chemists developing cutting-edge cosmetic compounds.</div></div>
-      <div class="pillar"><div class="pillar-title">GMP Compliance</div><div class="pillar-copy">Fully compliant manufacturing following Good Manufacturing Practices.</div></div>
       <div class="pillar"><div class="pillar-title">Custom Shades</div><div class="pillar-copy">Proprietary colour-matching technology for bespoke pigment development.</div></div>
       <div class="pillar"><div class="pillar-title">Private Label</div><div class="pillar-copy">End-to-end white-label solutions from concept to branded packaging.</div></div>
     </div>
@@ -740,32 +679,16 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Cadenza <span>Industries</span></div>
-  <div class="footer-copy">© 2025 Cadenza Industries Pvt. Ltd. All rights reserved.</div>
+  <div class="footer-copy">© 2026 Cadenza Industries Pvt. Ltd. All rights reserved.</div>
   <div class="footer-links">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms</a>
-    <a href="#">Certifications</a>
   </div>
 </footer>
 
 <script>
 (function () {
   'use strict';
-
-  /* ── 1. Theme toggle ── */
-  var html       = document.documentElement;
-  var toggleBtn  = document.getElementById('themeToggle');
-
-  // restore saved preference
-  var saved = localStorage.getItem('cadenza-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-
-  toggleBtn.addEventListener('click', function () {
-    var current = html.getAttribute('data-theme');
-    var next    = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('cadenza-theme', next);
-  });
 
   /* ── 2. Navbar scroll class ── */
   var navbar = document.getElementById('navbar');
