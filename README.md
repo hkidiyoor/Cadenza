@@ -1,1 +1,1 @@
-## This is a website for Cadenza Industries
+## This is a website for Cadenza Enterprises
