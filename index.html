@@ -3,539 +3,512 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadenza Industries — Colour Cosmetics Manufacturing</title>
+  <title>Cadenza Enterprises — Colour Cosmetics Manufacturing</title>
 
-  <!-- SEO: Core -->
-  <meta name="description" content="Cadenza Industries is a premium colour cosmetics manufacturer offering private-label and contract manufacturing for lipstick, eyeshadow, foundation, and more."/>
+  <meta name="description" content="Cadenza Enterprises is a premium colour cosmetics manufacturer offering private-label and contract manufacturing for eyeliner, mascara, kajal, and compact powder."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://cadenzaenterprises.in/"/>
-
-  <!-- SEO: Open Graph (social sharing & richer Google previews) -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://cadenzaenterprises.in/"/>
-  <meta property="og:title" content="Cadenza Industries — Colour Cosmetics Manufacturing"/>
-  <meta property="og:description" content="Premium private-label and contract colour cosmetics manufacturing. Lipstick, eyeshadow, foundation, and more."/>
+  <meta property="og:title" content="Cadenza Enterprises — Colour Cosmetics Manufacturing"/>
+  <meta property="og:description" content="Premium private-label and contract colour cosmetics manufacturing. Eyeliner, mascara, kajal, compact powder and more."/>
   <meta property="og:image" content="https://cadenzaenterprises.in/og-image.jpg"/>
-
-  <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Cadenza Industries — Colour Cosmetics Manufacturing"/>
+  <meta name="twitter:title" content="Cadenza Enterprises — Colour Cosmetics Manufacturing"/>
   <meta name="twitter:description" content="Premium private-label and contract colour cosmetics manufacturing."/>
   <meta name="twitter:image" content="https://cadenzaenterprises.in/og-image.jpg"/>
-
-  <!-- SEO: Structured Data (helps Google show rich results) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Cadenza Industries",
-    "url": "https://cadenzaenterprises.in",
-    "description": "Premium colour cosmetics manufacturer specialising in private-label and contract manufacturing.",
-    "logo": "https://cadenzaenterprises.in/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "availableLanguage": "English"
-    }
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Cadenza Enterprises","url":"https://cadenzaenterprises.in","description":"Premium colour cosmetics manufacturer specialising in private-label and contract manufacturing.","logo":"https://cadenzaenterprises.in/logo.png","contactPoint":{"@type":"ContactPoint","contactType":"sales","availableLanguage":"English"}}
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
     :root {
-      --nav-h: 72px;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:  'DM Sans', sans-serif;
-      --bg:        #fdf9f5;
-      --bg-deep:   #f7f0e8;
-      --bg-panel:  #f0e6da;
-      --text:      #2c1f18;
-      --muted:     #8a6f63;
-      --rose:      #c4847a;
-      --rose-lt:   #e0afa8;
-      --rose-pale: #f5e4e1;
-      --sage:      #8aab94;
-      --sage-pale: #ddeee3;
-      --border:    rgba(196,132,122,.2);
-      --nav-bg:    rgba(253,249,245,.95);
-      --shadow:    0 4px 32px rgba(44,31,24,.08);
-      --shadow-lg: 0 16px 64px rgba(44,31,24,.12);
+      --nav-h:     76px;
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'DM Sans', sans-serif;
+      --bg:        #FAF7F3;
+      --bg-alt:    #F0E8DF;
+      --bg-dark:   #1C1410;
+      --text:      #1C1410;
+      --muted:     #6B584E;
+      --rose:      #A86B60;
+      --rose-lt:   #C48B80;
+      --rose-pale: #EFE0DA;
+      --gold:      #C4A882;
+      --border:    rgba(168,107,96,.15);
+      --border-d:  rgba(255,255,255,.07);
+      --nav-bg:    rgba(250,247,243,.96);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior:smooth; }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      overflow-x: hidden;
+      background:var(--bg); color:var(--text);
+      font-family:var(--sans); font-weight:300;
+      overflow-x:hidden; -webkit-font-smoothing:antialiased;
     }
 
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 2px; }
+    ::-webkit-scrollbar { width:3px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--rose); }
 
-    /* ── CURSOR ── */
-    body { cursor: none; }
+    /* CURSOR */
+    body { cursor:none; }
     #cursor-dot, #cursor-ring {
-      position: fixed; border-radius: 50%;
-      pointer-events: none; z-index: 10000;
-      transform: translate(-50%,-50%);
+      position:fixed; border-radius:50%; pointer-events:none; z-index:10000;
+      transform:translate(-50%,-50%);
     }
-    #cursor-dot  { width:6px; height:6px; background:var(--rose); top:0; left:0; }
+    #cursor-dot  { width:5px; height:5px; background:var(--rose); top:0; left:0; }
     #cursor-ring {
-      width:28px; height:28px;
-      border:1.5px solid rgba(196,132,122,.5);
-      top:0; left:0;
-      transition: width .25s, height .25s, border-color .25s;
+      width:30px; height:30px; border:1px solid rgba(168,107,96,.4);
+      top:0; left:0; transition:width .3s, height .3s, border-color .3s;
     }
     body:has(a:hover) #cursor-ring,
-    body:has(button:hover) #cursor-ring { width:44px; height:44px; border-color:var(--rose); }
+    body:has(button:hover) #cursor-ring { width:48px; height:48px; border-color:var(--rose); }
     @media (max-width:960px) { body{cursor:auto;} #cursor-dot,#cursor-ring{display:none;} }
 
-    /* ── NAV ── */
+    /* NAV */
     #navbar {
       position:fixed; top:0; left:0; right:0; height:var(--nav-h);
       display:flex; align-items:center; justify-content:space-between;
-      padding:0 5vw; gap:1.5rem; z-index:300;
+      padding:0 5vw; z-index:300;
       border-bottom:1px solid transparent;
-      transition:background .4s, border-color .4s, box-shadow .4s;
+      transition:background .5s, border-color .5s;
     }
     #navbar.scrolled {
       background:var(--nav-bg);
-      backdrop-filter:blur(16px);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
       border-color:var(--border);
-      box-shadow:var(--shadow);
     }
     .nav-logo {
-      font-family:var(--serif); font-size:1.35rem; font-weight:500; letter-spacing:.04em;
-      color:var(--text); text-decoration:none; flex-shrink:0;
+      font-family:var(--serif); font-size:1.5rem; font-weight:500; letter-spacing:.05em;
+      color:var(--text); text-decoration:none;
     }
-    .nav-logo span { color:var(--rose); }
-    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .nav-logo em { font-style:italic; color:var(--rose); font-weight:400; }
+    .nav-links { display:flex; gap:2.8rem; list-style:none; }
     .nav-links a {
-      font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; font-weight:400;
+      font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:400;
       color:var(--muted); text-decoration:none; transition:color .3s;
     }
-    .nav-links a:hover { color:var(--rose); }
-    .nav-right { display:flex; align-items:center; gap:1rem; flex-shrink:0; }
+    .nav-links a:hover { color:var(--text); }
     .nav-cta {
-      font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; font-weight:500;
-      background:var(--rose); color:#fff;
-      padding:.55rem 1.4rem; text-decoration:none; border-radius:100px;
-      transition:background .3s, transform .2s; white-space:nowrap;
+      font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; font-weight:500;
+      color:var(--rose); border:1px solid var(--rose);
+      padding:.5rem 1.5rem; text-decoration:none; transition:background .3s, color .3s;
     }
-    .nav-cta:hover { background:var(--rose-lt); transform:translateY(-1px); }
+    .nav-cta:hover { background:var(--rose); color:#fff; }
+    .nav-right { display:flex; align-items:center; gap:1rem; flex-shrink:0; }
+
     .hamburger {
       display:none; flex-direction:column; justify-content:center;
       gap:5px; width:36px; height:36px;
       background:none; border:none; cursor:pointer; padding:4px; flex-shrink:0;
     }
-    .hamburger span { display:block; height:1.5px; background:var(--text); transition:transform .3s, opacity .3s; transform-origin:center; }
+    .hamburger span { display:block; height:1px; background:var(--text); transition:transform .3s, opacity .3s; }
     .hamburger span:nth-child(1) { width:24px; }
     .hamburger span:nth-child(2) { width:16px; }
     .hamburger span:nth-child(3) { width:24px; }
-    .hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); width:24px; }
     .hamburger.open span:nth-child(2) { opacity:0; }
-    .hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+    .hamburger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); width:24px; }
 
-    /* Mobile Menu */
+    /* MOBILE MENU */
     .mobile-menu {
-      position:fixed; inset:0; z-index:250;
-      background:rgba(253,249,245,.97); backdrop-filter:blur(20px);
+      position:fixed; inset:0; z-index:250; background:var(--bg);
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.8rem;
-      opacity:0; pointer-events:none; transition:opacity .3s;
+      opacity:0; pointer-events:none; transition:opacity .35s;
     }
     .mobile-menu.open { opacity:1; pointer-events:all; }
     .mob-link {
-      font-family:var(--serif); font-size:clamp(1.8rem,5vw,2.4rem);
+      font-family:var(--serif); font-size:clamp(2rem,6vw,3rem);
       font-weight:400; color:var(--text); text-decoration:none; transition:color .3s;
     }
-    .mob-link:hover { color:var(--rose); }
-    .mob-divider { width:36px; height:1px; background:var(--border); }
+    .mob-link:hover { color:var(--rose); font-style:italic; }
+    .mob-divider { width:1px; height:1.5rem; background:var(--border); }
     .mob-cta {
-      margin-top:.8rem; font-family:var(--sans); font-size:.72rem;
-      letter-spacing:.2em; text-transform:uppercase; font-weight:500;
-      background:var(--rose); color:#fff; padding:.85rem 2.2rem;
-      text-decoration:none; border-radius:100px;
+      margin-top:1rem; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; font-weight:500;
+      color:var(--rose); border:1px solid var(--rose); padding:.8rem 2.2rem; text-decoration:none;
     }
 
-    /* ── SHARED ── */
-    section { padding:7rem 5vw; scroll-margin-top:var(--nav-h); }
-    .section-label {
-      font-size:.68rem; letter-spacing:.3em; text-transform:uppercase;
-      color:var(--rose); display:flex; align-items:center; gap:.8rem; margin-bottom:1rem; font-weight:500;
+    /* SHARED */
+    section { padding:9rem 5vw; scroll-margin-top:var(--nav-h); }
+
+    .eyebrow {
+      font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
+      color:var(--rose); font-weight:500;
+      display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem;
     }
-    .section-label::before { content:''; flex:0 0 20px; height:1.5px; background:var(--rose); border-radius:2px; }
+    .eyebrow-line { flex:0 0 28px; height:1px; background:currentColor; }
+
     .section-title {
-      font-family:var(--serif); font-size:clamp(2rem,4.5vw,3.8rem);
-      font-weight:500; line-height:1.12; color:var(--text);
+      font-family:var(--serif);
+      font-size:clamp(2.4rem,5vw,4.8rem);
+      font-weight:400; line-height:1.05; color:var(--text); letter-spacing:-.01em;
     }
-    .section-title em { font-style:italic; color:var(--rose); }
-    .divider { width:48px; height:2px; background:var(--rose); border-radius:2px; margin:1.6rem 0; }
-    .body-copy { font-size:1rem; font-weight:300; line-height:1.9; color:var(--muted); margin-bottom:1.2rem; }
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .section-title em { font-style:italic; color:var(--rose); font-weight:300; }
+
+    .body-copy { font-size:.92rem; font-weight:300; line-height:2; color:var(--muted); }
+
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
     .btn-primary {
-      font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; font-weight:500;
-      background:var(--rose); color:#fff; border-radius:100px;
-      padding:.95rem 2.4rem; text-decoration:none; display:inline-block;
-      transition:background .3s, transform .2s, box-shadow .3s;
-      box-shadow:0 4px 16px rgba(196,132,122,.3);
+      font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:500;
+      background:var(--text); color:var(--bg);
+      padding:1rem 2.6rem; text-decoration:none; display:inline-block;
+      transition:background .3s;
     }
-    .btn-primary:hover { background:var(--rose-lt); transform:translateY(-2px); box-shadow:0 8px 24px rgba(196,132,122,.35); }
+    .btn-primary:hover { background:var(--rose); }
     .btn-ghost {
-      font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; font-weight:500;
-      color:var(--rose); border:1.5px solid var(--rose); border-radius:100px;
-      padding:.95rem 2.4rem; text-decoration:none; display:inline-block;
-      transition:background .3s, color .3s;
+      font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:500;
+      color:var(--text); border:1px solid var(--text);
+      padding:1rem 2.6rem; text-decoration:none; display:inline-block;
+      transition:color .3s, border-color .3s;
     }
-    .btn-ghost:hover { background:var(--rose); color:#fff; }
+    .btn-ghost:hover { color:var(--rose); border-color:var(--rose); }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
-      min-height:100vh; position:relative; overflow:hidden;
+      min-height:100vh; position:relative;
       display:grid; grid-template-columns:1fr 1fr; align-items:center;
-      padding:calc(var(--nav-h) + 3rem) 5vw 4rem;
-      gap:2rem;
+      padding:calc(var(--nav-h) + 5rem) 5vw 5rem; gap:5vw;
     }
-    .hero-bg-blobs {
-      position:absolute; inset:0; pointer-events:none; overflow:hidden;
+    #hero::after {
+      content:'';
+      position:absolute; top:0; right:33.33%; width:1px; height:100%;
+      background:linear-gradient(to bottom, transparent, var(--border) 15%, var(--border) 85%, transparent);
+      pointer-events:none;
     }
-    .blob {
-      position:absolute; border-radius:50%; filter:blur(60px); opacity:.6;
-    }
-    .blob-1 { width:500px; height:500px; background:var(--rose-pale); top:-100px; right:-100px; }
-    .blob-2 { width:400px; height:400px; background:var(--sage-pale); bottom:-80px; left:-80px; }
-    .blob-3 { width:300px; height:300px; background:#fde8d0; top:40%; right:30%; opacity:.4; }
 
     .hero-inner { position:relative; z-index:2; }
     .hero-eyebrow {
-      font-size:.68rem; letter-spacing:.3em; text-transform:uppercase;
-      color:var(--rose); margin-bottom:1.4rem; font-weight:500;
-      display:flex; align-items:center; gap:.8rem;
-      opacity:0; animation:fadeUp .8s .2s forwards;
+      font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
+      color:var(--rose); font-weight:500;
+      display:flex; align-items:center; gap:1rem; margin-bottom:2.2rem;
+      opacity:0; animation:fadeUp .8s .15s forwards;
     }
-    .hero-eyebrow::before { content:''; flex:0 0 20px; height:1.5px; background:var(--rose); border-radius:2px; }
+    .hero-eyebrow::before { content:''; flex:0 0 28px; height:1px; background:var(--rose); }
+
     .hero-headline {
       font-family:var(--serif);
-      font-size:clamp(2.8rem,5.5vw,5.2rem); font-weight:500; line-height:1.08;
-      color:var(--text); opacity:0; animation:fadeUp .9s .35s forwards;
+      font-size:clamp(3.8rem,7.5vw,7.5rem); font-weight:400; line-height:1.0;
+      letter-spacing:-.02em; color:var(--text);
+      opacity:0; animation:fadeUp .9s .3s forwards;
     }
-    .hero-headline em { font-style:italic; color:var(--rose); }
+    .hero-headline em { font-style:italic; color:var(--rose); font-weight:300; }
+
+    .hero-rule {
+      width:100%; height:1px; background:var(--border);
+      margin:2.8rem 0;
+      opacity:0; animation:fadeUp .8s .45s forwards;
+    }
     .hero-sub {
-      margin-top:1.6rem; max-width:440px; line-height:1.85;
-      font-size:1rem; font-weight:300; color:var(--muted);
-      opacity:0; animation:fadeUp .9s .5s forwards;
+      max-width:400px; line-height:2;
+      font-size:.9rem; font-weight:300; color:var(--muted);
+      opacity:0; animation:fadeUp .9s .55s forwards;
     }
     .hero-actions {
-      margin-top:2.4rem; display:flex; gap:1rem; flex-wrap:wrap;
-      opacity:0; animation:fadeUp .9s .65s forwards;
+      margin-top:2.8rem; display:flex; gap:1rem; flex-wrap:wrap;
+      opacity:0; animation:fadeUp .9s .7s forwards;
     }
-    .hero-badge {
-      margin-top:2.8rem; display:flex; align-items:center; gap:1.2rem;
-      opacity:0; animation:fadeUp .9s .8s forwards;
+    .hero-meta {
+      margin-top:3.5rem; padding-top:2rem;
+      border-top:1px solid var(--border);
+      display:flex; gap:3rem;
+      opacity:0; animation:fadeUp .9s .85s forwards;
     }
-    .hero-badge-avatars { display:flex; }
-    .hero-badge-avatar {
-      width:32px; height:32px; border-radius:50%; border:2px solid #fff;
-      background:var(--rose-pale); margin-left:-8px; overflow:hidden;
-      display:flex; align-items:center; justify-content:center;
-      font-size:.6rem; color:var(--rose); font-weight:500;
+    .hero-meta-item {
+      font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
     }
-    .hero-badge-avatar:first-child { margin-left:0; }
-    .hero-badge-text { font-size:.8rem; color:var(--muted); line-height:1.4; }
-    .hero-badge-text strong { color:var(--text); font-weight:500; display:block; font-size:.95rem; }
+    .hero-meta-item strong {
+      display:block; font-family:var(--serif); font-size:1.8rem;
+      font-weight:300; letter-spacing:-.02em; text-transform:none; color:var(--text); margin-bottom:.1rem;
+    }
 
-    /* Hero image side */
     .hero-visual {
-      position:relative; z-index:2;
-      display:flex; align-items:center; justify-content:center;
-      opacity:0; animation:fadeIn 1.2s .4s forwards;
+      position:relative; z-index:2; height:620px;
+      opacity:0; animation:fadeIn 1.2s .35s forwards;
     }
-    .hero-arch {
-      position:absolute;
-      width:min(420px,90%); height:min(520px,110%);
-      background:linear-gradient(160deg, var(--sage-pale) 0%, var(--rose-pale) 100%);
-      border-radius:50% 50% 48% 48% / 40% 40% 60% 60%;
-      top:50%; left:50%; transform:translate(-50%,-50%);
-      z-index:0;
+    .hero-img-frame {
+      position:absolute; inset:0; overflow:hidden;
     }
-    .hero-arch::before {
-      content:''; position:absolute; inset:-12px;
-      border-radius:inherit;
-      background:transparent;
-      border:1.5px solid rgba(196,132,122,.15);
+    .hero-img-frame img { width:100%; height:100%; object-fit:cover; }
+    .hero-img-frame::before {
+      content:''; position:absolute; inset:-14px;
+      border:1px solid var(--border); z-index:2; pointer-events:none;
     }
-    .hero-img {
-      position:relative; z-index:1;
-      width:min(460px,100%);
-      filter:drop-shadow(0 24px 48px rgba(44,31,24,.18));
-      animation:float 5s ease-in-out infinite;
+    .hero-caption {
+      position:absolute; bottom:-1.8rem; left:0;
+      font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
     }
-    @keyframes float {
-      0%,100% { transform:translateY(0); }
-      50%      { transform:translateY(-14px); }
-    }
-    .hero-spin-badge {
-      position:absolute; bottom:10%; right:5%;
-      width:96px; height:96px; z-index:3;
-      animation:spinSlow 12s linear infinite;
-    }
-    .hero-spin-badge svg { width:100%; height:100%; }
-    @keyframes spinSlow { to { transform:rotate(360deg); } }
 
-    /* ── STATS ── */
-    #stats {
-      padding:3rem 5vw;
-      background:var(--text);
+    /* MARQUEE */
+    .marquee-strip {
+      overflow:hidden;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:.9rem 0; background:var(--bg-alt);
     }
-    .stats-grid { display:grid; grid-template-columns:repeat(2,1fr); }
-    .stat-item { padding:2.5rem 3vw; border-right:1px solid rgba(253,249,245,.1); }
+    .marquee-track {
+      display:flex; gap:3rem; white-space:nowrap;
+      animation:marquee 24s linear infinite; width:max-content;
+    }
+    .marquee-item {
+      font-size:.62rem; letter-spacing:.25em; text-transform:uppercase;
+      color:var(--muted); font-weight:500;
+      display:flex; align-items:center; gap:1.5rem; flex-shrink:0;
+    }
+    .marquee-dot { width:3px; height:3px; border-radius:50%; background:var(--rose); flex-shrink:0; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* STATS */
+    #stats { padding:0; background:var(--bg-dark); }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+    .stat-item {
+      padding:4.5rem 3.5vw;
+      border-right:1px solid var(--border-d);
+      transition:background .4s;
+    }
     .stat-item:last-child { border-right:none; }
-    .stat-num { font-family:var(--serif); font-size:clamp(2.2rem,4vw,3.4rem); font-weight:500; color:var(--rose-lt); line-height:1; }
-    .stat-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(253,249,245,.5); margin-top:.5rem; }
+    .stat-item:hover { background:rgba(255,255,255,.02); }
+    .stat-num {
+      font-family:var(--serif); font-size:clamp(3rem,4.5vw,4.8rem);
+      font-weight:300; color:#FAF7F3; line-height:1; letter-spacing:-.02em;
+    }
+    .stat-num em { font-style:italic; color:var(--rose-lt); }
+    .stat-label { font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(250,247,243,.35); margin-top:.8rem; }
 
-    /* ── ABOUT ── */
-    #about { display:grid; grid-template-columns:1fr 1fr; gap:6vw; align-items:center; background:var(--bg); }
-    .about-visual { position:relative; height:560px; }
-    .about-arch-wrap {
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
+    /* ABOUT */
+    #about { background:var(--bg); display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:center; }
+
+    .about-visual { position:relative; }
+    .about-img-wrap {
+      width:100%; aspect-ratio:3/4; overflow:hidden; position:relative;
     }
-    .about-arch-bg {
-      width:88%; height:100%;
-      background:linear-gradient(150deg, var(--sage-pale) 0%, var(--rose-pale) 60%, var(--bg-panel) 100%);
-      border-radius:50% 50% 48% 48% / 35% 35% 65% 65%;
-      position:relative; overflow:hidden;
-    }
-    .about-arch-bg img {
+    .about-img-wrap img {
       width:100%; height:100%; object-fit:cover;
-      mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 82%, transparent 100%),
-                 linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 82%, transparent 100%),
-                         linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      -webkit-mask-composite: destination-in;
-      mask-composite: intersect;
+      transition:transform .9s cubic-bezier(.16,1,.3,1);
     }
-    .about-badge {
-      position:absolute; bottom:2rem; right:0;
+    .about-img-wrap:hover img { transform:scale(1.04); }
+    .about-img-wrap::after {
+      content:''; position:absolute; inset:0;
+      border:1px solid rgba(168,107,96,.2); pointer-events:none; z-index:1;
+    }
+    .about-tag {
+      position:absolute; bottom:-1px; right:-1px; z-index:2;
       background:var(--rose); color:#fff;
-      padding:.9rem 1.6rem; font-size:.65rem; letter-spacing:.15em;
-      text-transform:uppercase; font-weight:500;
-      border-radius:100px 0 0 100px;
-      box-shadow:0 4px 20px rgba(196,132,122,.35);
+      padding:.7rem 1.8rem; font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; font-weight:500;
     }
-    .about-pillars { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
-    .pillar {
-      padding:1.2rem 1.4rem; border:1.5px solid var(--border);
-      border-radius:16px; transition:border-color .3s, background .3s, transform .3s;
-      background:#fff;
+    .about-offset-num {
+      position:absolute; top:1.5rem; left:-2.5rem;
+      font-family:var(--serif); font-size:9rem; font-weight:300;
+      color:var(--bg-alt); line-height:1; letter-spacing:-.05em; pointer-events:none; z-index:-1;
     }
-    .pillar:hover { border-color:var(--rose); background:var(--rose-pale); transform:translateY(-2px); }
-    .pillar-title { font-family:var(--serif); font-size:1rem; color:var(--rose); margin-bottom:.3rem; font-weight:500; }
-    .pillar-copy  { font-size:.78rem; color:var(--muted); line-height:1.6; }
 
-    /* ── PRODUCTS ── */
-    #products { background:var(--bg-deep); }
+    .about-pillars {
+      display:grid; grid-template-columns:1fr 1fr; gap:0;
+      margin-top:2.5rem; border:1px solid var(--border);
+    }
+    .pillar {
+      padding:1.6rem 1.8rem;
+      border-right:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      transition:background .3s;
+    }
+    .pillar:nth-child(2n) { border-right:none; }
+    .pillar:nth-last-child(-n+2) { border-bottom:none; }
+    .pillar:hover { background:var(--rose-pale); }
+    .pillar-title { font-family:var(--serif); font-size:1.05rem; color:var(--text); margin-bottom:.4rem; font-weight:500; }
+    .pillar-copy  { font-size:.74rem; color:var(--muted); line-height:1.75; }
+
+    /* PRODUCTS */
+    #products { background:var(--bg-alt); }
     .products-header {
       display:flex; justify-content:space-between; align-items:flex-end;
-      margin-bottom:3.5rem; gap:1.5rem; flex-wrap:wrap;
+      margin-bottom:4rem; gap:2rem; flex-wrap:wrap;
+      padding-bottom:3rem; border-bottom:1px solid var(--border);
     }
     .products-grid {
-      display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; background:var(--border); border:1px solid var(--border);
     }
-    .product-card {
-      background:#fff; border-radius:20px; overflow:hidden;
-      display:flex; flex-direction:column;
-      border:1.5px solid var(--border);
-      transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, border-color .4s;
-      box-shadow:0 2px 12px rgba(44,31,24,.05);
-    }
-    .product-card:hover {
-      transform:translateY(-6px);
-      box-shadow:var(--shadow-lg);
-      border-color:var(--rose);
-    }
-    .product-img-wrap {
-      width:100%; height:160px; overflow:hidden; position:relative;
-    }
+    .product-card { background:var(--bg-alt); display:flex; flex-direction:column; transition:background .3s; }
+    .product-card:hover { background:var(--bg); }
+    .product-img-wrap { width:100%; height:240px; overflow:hidden; }
     .product-img-wrap img {
       width:100%; height:100%; object-fit:cover;
-      transition:transform .7s cubic-bezier(.16,1,.3,1);
+      transition:transform .9s cubic-bezier(.16,1,.3,1);
+      filter:saturate(90%);
     }
-    .product-card:hover .product-img-wrap img { transform:scale(1.08); }
-    .product-img-wrap::after {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(to bottom, transparent 50%, rgba(253,249,245,.6) 100%);
+    .product-card:hover .product-img-wrap img { transform:scale(1.06); filter:saturate(100%); }
+    .product-body { padding:2rem 1.8rem 2.4rem; flex:1; display:flex; flex-direction:column; }
+    .product-num {
+      font-family:var(--serif); font-size:3rem; font-weight:300;
+      color:var(--border); line-height:1; margin-bottom:1rem; letter-spacing:-.02em;
     }
-    .product-body { padding:1.4rem 1.4rem 1.6rem; flex:1; display:flex; flex-direction:column; }
-    .product-name { font-family:var(--serif); font-size:1.2rem; font-weight:500; color:var(--text); margin-bottom:.5rem; }
-    .product-desc { font-size:.78rem; font-weight:300; line-height:1.7; color:var(--muted); flex:1; }
+    .product-name { font-family:var(--serif); font-size:1.6rem; font-weight:400; color:var(--text); margin-bottom:.7rem; }
+    .product-desc { font-size:.74rem; font-weight:300; line-height:1.85; color:var(--muted); flex:1; }
     .product-tag {
-      margin-top:1.2rem; font-size:.65rem; letter-spacing:.2em; text-transform:uppercase;
-      color:var(--rose); font-weight:500;
-      display:flex; align-items:center; gap:.5rem;
-      transition:gap .3s;
+      margin-top:1.6rem; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--rose); font-weight:500; display:flex; align-items:center; gap:.7rem;
     }
-    .product-tag::before { content:''; flex:0 0 14px; height:1.5px; background:var(--rose); border-radius:2px; transition:flex-basis .3s; }
-    .product-card:hover .product-tag { gap:.8rem; }
-    .product-card:hover .product-tag::before { flex-basis:22px; }
+    .product-tag-line { height:1px; width:16px; background:var(--rose); transition:width .4s; flex-shrink:0; }
+    .product-card:hover .product-tag-line { width:30px; }
 
-    /* ── WHY SECTION ── */
-    #why { background:var(--bg); position:relative; overflow:hidden; }
-    .why-header { text-align:center; max-width:560px; margin:0 auto 4rem; }
-    .why-header .section-label { justify-content:center; }
-    .why-header .section-label::before { display:none; }
-
-    /* 3-col: left features | centre image | right features */
-    .radial-wrap {
-      display:grid;
-      grid-template-columns:1fr auto 1fr;
-      grid-template-rows:1fr 1fr;
-      gap:2rem 3vw;
-      align-items:center;
-      max-width:960px;
-      margin:0 auto;
+    /* WHY */
+    #why { background:var(--bg); }
+    .why-header { max-width:680px; margin-bottom:5rem; }
+    .why-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:0; border:1px solid var(--border);
     }
-    .radial-center {
-      grid-column:2;
-      grid-row:1 / span 2;
-      width:260px; height:260px;
-      background:linear-gradient(135deg, var(--sage-pale), var(--rose-pale));
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 8px 40px rgba(44,31,24,.1);
-      position:relative;
+    .why-item {
+      padding:2.8rem 2.4rem;
+      border-right:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      transition:background .3s;
     }
-    .radial-center::before {
-      content:'';
-      position:absolute; inset:-16px;
-      border:1.5px dashed rgba(196,132,122,.25);
-      border-radius:50%;
-      animation:spinSlow 25s linear infinite;
+    .why-item:nth-child(3n) { border-right:none; }
+    .why-item:nth-last-child(-n+3) { border-bottom:none; }
+    .why-item:hover { background:var(--rose-pale); }
+    .why-icon { width:36px; height:36px; margin-bottom:1.5rem; }
+    .why-icon svg { width:100%; height:100%; stroke:var(--rose); stroke-width:1; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .why-title { font-family:var(--serif); font-size:1.2rem; font-weight:400; color:var(--text); margin-bottom:.6rem; }
+    .why-copy { font-size:.74rem; color:var(--muted); line-height:1.85; }
+    .why-cta-cell {
+      padding:2.8rem 2.4rem;
+      border-bottom:1px solid var(--border);
+      display:flex; flex-direction:column; justify-content:center;
     }
-    .radial-center img { width:200px; height:200px; object-fit:cover; border-radius:50%; }
-
-    /* Left column items: col 1, rows 1 and 2 */
-    .radial-item:nth-child(2) { grid-column:1; grid-row:1; text-align:right; align-items:flex-end; }
-    .radial-item:nth-child(5) { grid-column:1; grid-row:2; text-align:right; align-items:flex-end; }
-    /* Right column items: col 3, rows 1 and 2 */
-    .radial-item:nth-child(3) { grid-column:3; grid-row:1; text-align:left; align-items:flex-start; }
-    .radial-item:nth-child(4) { grid-column:3; grid-row:2; text-align:left; align-items:flex-start; }
-
-    /* Bottom item spanning full width below */
-    .radial-item:nth-child(6) {
-      grid-column:1 / span 3;
-      flex-direction:row; gap:1rem; align-items:center;
-      justify-content:center; text-align:left;
-      margin-top:1rem;
+    .why-cta-cell blockquote {
+      font-family:var(--serif); font-size:1.1rem; font-style:italic;
+      color:var(--muted); line-height:1.6;
+      border-left:2px solid var(--rose); padding-left:1.4rem; margin-bottom:2rem;
     }
 
-    .radial-item {
-      display:flex; flex-direction:column; gap:.5rem;
-      padding:1.2rem 1.4rem;
-      background:#fff; border-radius:16px;
-      border:1.5px solid var(--border);
-      transition:border-color .3s, transform .3s, box-shadow .3s;
-    }
-    .radial-item:hover {
-      border-color:var(--rose);
-      transform:translateY(-3px);
-      box-shadow:0 8px 24px rgba(196,132,122,.12);
-    }
-    .radial-icon {
-      width:44px; height:44px; border-radius:50%;
-      background:linear-gradient(135deg, var(--sage-pale), var(--rose-pale));
-      display:flex; align-items:center; justify-content:center;
-      font-size:1.2rem; flex-shrink:0;
-    }
-    .radial-title { font-family:var(--serif); font-size:1rem; font-weight:500; color:var(--text); }
-    .radial-copy { font-size:.74rem; color:var(--muted); line-height:1.55; }
-
-    /* ── PROCESS ── */
-    #process { background:var(--bg-deep); }
-    .process-header { text-align:center; max-width:560px; margin:0 auto 4rem; }
-    .process-header .section-label { justify-content:center; }
-    .process-header .section-label::before { display:none; }
+    /* PROCESS */
+    #process { background:var(--bg-dark); overflow:hidden; }
+    .process-header { margin-bottom:5rem; }
+    .process-header .section-title { color:#FAF7F3; }
+    .process-header .eyebrow { color:var(--rose-lt); }
+    .process-header .eyebrow-line { background:var(--rose-lt); }
     .process-steps {
       display:grid; grid-template-columns:repeat(5,1fr);
-      gap:1.5rem; position:relative;
+      border-top:1px solid var(--border-d);
     }
-    .process-steps::before {
-      content:''; position:absolute; top:28px; left:10%; right:10%; height:1.5px;
-      background:linear-gradient(90deg, transparent, var(--rose-pale), var(--rose), var(--rose-pale), transparent);
+    .step {
+      padding:3rem 2rem 3rem 0;
+      border-right:1px solid var(--border-d);
+      position:relative; overflow:hidden;
     }
-    .step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 .5rem; }
+    .step:last-child { border-right:none; }
+    .step::before {
+      content:''; position:absolute; top:0; left:0;
+      width:0; height:2px; background:var(--rose);
+      transition:width .7s cubic-bezier(.16,1,.3,1);
+    }
+    .step:hover::before { width:100%; }
     .step-num {
-      width:56px; height:56px; border-radius:50%;
-      background:#fff; border:2px solid var(--rose);
-      display:flex; align-items:center; justify-content:center;
-      font-family:var(--serif); font-size:1.2rem; color:var(--rose); font-weight:500;
-      position:relative; z-index:1; margin-bottom:1.2rem;
-      transition:background .3s, color .3s, box-shadow .3s;
-      box-shadow:0 2px 12px rgba(196,132,122,.15);
+      font-family:var(--serif); font-size:clamp(4rem,5.5vw,6rem);
+      font-weight:300; color:rgba(255,255,255,.06);
+      line-height:1; margin-bottom:2.5rem; letter-spacing:-.02em;
     }
-    .step:hover .step-num { background:var(--rose); color:#fff; box-shadow:0 6px 20px rgba(196,132,122,.35); }
-    .step-title { font-family:var(--serif); font-size:.95rem; font-weight:500; color:var(--text); margin-bottom:.4rem; }
-    .step-copy  { font-size:.74rem; color:var(--muted); line-height:1.6; }
+    .step-title { font-family:var(--serif); font-size:1.1rem; font-weight:400; color:#FAF7F3; margin-bottom:.6rem; }
+    .step-copy  { font-size:.72rem; color:rgba(250,247,243,.4); line-height:1.8; }
 
-    /* ── CONTACT ── */
-    #contact { background:var(--bg); max-width:640px; }
-    .contact-details { display:flex; flex-direction:column; gap:.9rem; margin-top:2rem; }
-    .contact-detail { display:flex; align-items:flex-start; gap:1rem; font-size:.85rem; color:var(--muted); line-height:1.6; }
+    /* CONTACT */
+    #contact { background:var(--bg-alt); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:start; }
+    .contact-divider { width:100%; height:1px; background:var(--border); margin:2.5rem 0; }
+    .contact-details { display:flex; flex-direction:column; gap:1.5rem; margin-top:.5rem; }
+    .contact-detail { display:flex; align-items:flex-start; gap:1.2rem; }
     .contact-detail-icon {
-      width:36px; height:36px; border-radius:50%;
-      background:var(--rose-pale); border:1.5px solid var(--border);
-      display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;
+      width:40px; height:40px; flex-shrink:0; margin-top:2px;
+      border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
     }
-    .contact-detail-icon svg { stroke:var(--rose); }
+    .contact-detail-icon svg { stroke:var(--rose); stroke-width:1; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .contact-detail-body { font-size:.84rem; color:var(--muted); line-height:1.75; }
+    .contact-detail-body a { color:inherit; text-decoration:none; transition:color .3s; }
+    .contact-detail-body a:hover { color:var(--rose); }
 
-    /* ── FOOTER ── */
-    footer {
-      background:var(--text); padding:2.5rem 5vw;
-      display:flex; justify-content:space-between; align-items:center;
-      gap:1.5rem; flex-wrap:wrap;
+    .contact-aside { padding-top:1rem; }
+    .contact-aside-quote {
+      font-family:var(--serif); font-size:clamp(1.5rem,2.8vw,2.2rem);
+      font-weight:400; font-style:italic; color:var(--text);
+      line-height:1.4; border-left:2px solid var(--rose);
+      padding-left:2rem; margin-bottom:3rem;
     }
-    .footer-logo { font-family:var(--serif); font-size:1.3rem; font-weight:500; letter-spacing:.04em; color:#fdf9f5; }
-    .footer-logo span { color:var(--rose-lt); }
-    .footer-copy { font-size:.72rem; color:rgba(253,249,245,.4); }
 
-    /* ── KEYFRAMES ── */
+    /* FOOTER */
+    footer { background:var(--bg-dark); padding:5rem 5vw 2.5rem; }
+    .footer-top {
+      display:grid; grid-template-columns:1.6fr 1fr 1fr;
+      gap:5vw; padding-bottom:3.5rem;
+      border-bottom:1px solid var(--border-d);
+    }
+    .footer-logo {
+      font-family:var(--serif); font-size:1.55rem; font-weight:500; letter-spacing:.05em;
+      color:#FAF7F3; text-decoration:none; display:inline-block; margin-bottom:1.2rem;
+    }
+    .footer-logo em { font-style:italic; color:var(--rose-lt); font-weight:400; }
+    .footer-brand p { font-size:.76rem; color:rgba(250,247,243,.38); line-height:1.9; max-width:280px; }
+    .footer-col-title { font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(250,247,243,.3); margin-bottom:1.4rem; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:.75rem; }
+    .footer-links a { font-size:.78rem; color:rgba(250,247,243,.5); text-decoration:none; transition:color .3s; }
+    .footer-links a:hover { color:#FAF7F3; }
+    .footer-bottom {
+      padding-top:2rem; display:flex; justify-content:space-between; align-items:center;
+      gap:1rem; flex-wrap:wrap;
+    }
+    .footer-copy { font-size:.66rem; letter-spacing:.06em; color:rgba(250,247,243,.22); }
+    .footer-tagline { font-family:var(--serif); font-size:.88rem; font-style:italic; color:rgba(250,247,243,.28); }
+
+    /* KEYFRAMES */
     @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width:960px) {
-      .nav-links,.nav-cta { display:none; }
-      .hamburger { display:flex; }
-      #hero { grid-template-columns:1fr; min-height:auto; padding-top:calc(var(--nav-h) + 2rem); }
-      .hero-visual { height:340px; }
-      .hero-img { width:260px; }
-      .stats-grid { grid-template-columns:1fr 1fr; }
-      #about { grid-template-columns:1fr; }
-      .about-visual { height:280px; }
-      .products-grid { grid-template-columns:1fr 1fr; }
-      .radial-wrap { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-      .radial-center { display:none; }
-      .radial-item:nth-child(2),
-      .radial-item:nth-child(3),
-      .radial-item:nth-child(4),
-      .radial-item:nth-child(5),
-      .radial-item:nth-child(6) { grid-column:auto; grid-row:auto; text-align:left; align-items:flex-start; }
-      .radial-item:nth-child(6) { flex-direction:column; }
-      .process-steps { grid-template-columns:1fr 1fr; }
-      .process-steps::before { display:none; }
-      .step { align-items:flex-start; text-align:left; }
+    /* RESPONSIVE */
+    @media (max-width:1100px) {
+      .products-grid { grid-template-columns:repeat(2,1fr); }
+      .why-grid { grid-template-columns:repeat(2,1fr); }
+      .why-item:nth-child(3n) { border-right:1px solid var(--border); }
+      .why-item:nth-child(2n) { border-right:none; }
+      .why-cta-cell { border-right:none; }
     }
-    @media (max-width:520px) {
-      section { padding:4rem 5vw; }
-      .products-grid { grid-template-columns:1fr; }
+    @media (max-width:960px) {
+      .nav-links, .nav-cta { display:none; }
+      .hamburger { display:flex; }
+      #hero { grid-template-columns:1fr; min-height:auto; padding-top:calc(var(--nav-h) + 2rem); gap:3rem; }
+      #hero::after { display:none; }
+      .hero-visual { height:320px; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .stat-item:nth-child(2) { border-right:none; }
+      #about { grid-template-columns:1fr; }
+      .about-offset-num { display:none; }
+      .process-steps { grid-template-columns:repeat(2,1fr); }
+      .contact-grid { grid-template-columns:1fr; gap:4rem; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:640px) {
+      section { padding:5rem 5vw; }
+      .products-grid { grid-template-columns:1fr; background:none; border:none; gap:1px; }
+      .product-card { border:1px solid var(--border); }
+      .why-grid { grid-template-columns:1fr; }
+      .why-item { border-right:none !important; }
+      .why-cta-cell { border-right:none !important; }
       .about-pillars { grid-template-columns:1fr; }
+      .pillar:nth-child(2n) { border-right:1px solid var(--border); }
       .process-steps { grid-template-columns:1fr; }
       .hero-actions { flex-direction:column; align-items:flex-start; }
+      .hero-meta { flex-wrap:wrap; gap:1.5rem; }
+      .footer-top { grid-template-columns:1fr; gap:3rem; }
     }
   </style>
 </head>
@@ -546,21 +519,21 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a class="mob-link" href="#about"   onclick="closeMob()">About</a>
+  <a class="mob-link" href="#about"    onclick="closeMob()">About</a>
   <div class="mob-divider"></div>
   <a class="mob-link" href="#products" onclick="closeMob()">Products</a>
   <div class="mob-divider"></div>
-  <a class="mob-link" href="#why"     onclick="closeMob()">Why Us</a>
+  <a class="mob-link" href="#why"      onclick="closeMob()">Why Us</a>
   <div class="mob-divider"></div>
-  <a class="mob-link" href="#process" onclick="closeMob()">Process</a>
+  <a class="mob-link" href="#process"  onclick="closeMob()">Process</a>
   <div class="mob-divider"></div>
-  <a class="mob-link" href="#contact" onclick="closeMob()">Contact</a>
-  <a class="mob-cta"  href="#contact" onclick="closeMob()">Partner With Us</a>
+  <a class="mob-link" href="#contact"  onclick="closeMob()">Contact</a>
+  <a class="mob-cta"  href="#contact"  onclick="closeMob()">Partner With Us</a>
 </div>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#hero">Cadenza <span>Industries</span></a>
+  <a class="nav-logo" href="#hero">Cadenza <em>Enterprises</em></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#products">Products</a></li>
@@ -578,82 +551,77 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-
   <div class="hero-inner">
     <p class="hero-eyebrow">Precision Cosmetics Manufacturing</p>
     <h1 class="hero-headline">Where <em>Colour</em><br>Meets Craft</h1>
-    <p class="hero-sub">Cadenza Industries is a specialist manufacturer of premium colour cosmetics. We partner with beauty brands to bring their vision to life — from formulation to finished product.</p>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Cadenza Enterprises is a specialist manufacturer of premium colour cosmetics. We partner with beauty brands to bring their vision to life — from formulation to finished product.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#products">Explore Products</a>
       <a class="btn-ghost"   href="#contact">Request Quotation</a>
     </div>
-    <div class="hero-badge">
-      <div class="hero-badge-avatars">
-        <div class="hero-badge-avatar">CI</div>
-        <div class="hero-badge-avatar" style="background:var(--sage-pale);color:var(--sage);">R&D</div>
-        <div class="hero-badge-avatar" style="background:#fde8d0;color:#c4946a;">QC</div>
-      </div>
-      <div class="hero-badge-text">
-        <strong>15+ Years of Excellence</strong>
-        Mumbai, India · Est. 2009
-      </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>15+</strong>Years Active</div>
+      <div class="hero-meta-item"><strong>4</strong>Product Lines</div>
+      <div class="hero-meta-item"><strong>Est.</strong>Mumbai, 2009</div>
     </div>
   </div>
 
   <div class="hero-visual">
-    <div class="hero-arch"></div>
-    <img class="hero-img" src="images/products-full.jpg" alt="Cadenza cosmetics product range"/>
-    <!-- Spinning badge -->
-    <div class="hero-spin-badge">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <path id="circle-text" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0"/>
-        </defs>
-        <circle cx="50" cy="50" r="44" fill="var(--rose)" opacity=".12"/>
-        <circle cx="50" cy="50" r="36" fill="none" stroke="var(--rose)" stroke-width="1" opacity=".3"/>
-        <text font-size="8.5" font-family="DM Sans, sans-serif" fill="var(--rose)" letter-spacing="3" font-weight="500" text-transform="uppercase">
-          <textPath href="#circle-text">QUALITY FIRST · CADENZA · EST 2009 · </textPath>
-        </text>
-        <circle cx="50" cy="50" r="5" fill="var(--rose)" opacity=".6"/>
-        <path d="M47 50 L53 50 M50 47 L50 53" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <div class="hero-img-frame">
+      <img src="images/products-full.jpg" alt="Cadenza cosmetics product range"/>
     </div>
+    <div class="hero-caption">Cadenza Enterprises · Mumbai, India</div>
   </div>
 </section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Private Label Manufacturing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contract Cosmetics <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Custom Formulation <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Eyeliner · Mascara · Kajal · Compact Powder <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mumbai · Est. 2009 <span class="marquee-dot"></span></span>
+    <span class="marquee-item">EU · US FDA · GCC Compliance <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Private Label Manufacturing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contract Cosmetics <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Custom Formulation <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Eyeliner · Mascara · Kajal · Compact Powder <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mumbai · Est. 2009 <span class="marquee-dot"></span></span>
+    <span class="marquee-item">EU · US FDA · GCC Compliance <span class="marquee-dot"></span></span>
+  </div>
+</div>
 
 <!-- STATS -->
 <section id="stats">
   <div class="stats-grid">
-    <div class="stat-item reveal"><div class="stat-num">15+</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat-item reveal"><div class="stat-num">15<em>+</em></div><div class="stat-label">Years of Excellence</div></div>
     <div class="stat-item reveal"><div class="stat-num">4</div><div class="stat-label">Core Product Lines</div></div>
+    <div class="stat-item reveal"><div class="stat-num">3</div><div class="stat-label">Export Markets</div></div>
+    <div class="stat-item reveal"><div class="stat-num"><em>'</em>09</div><div class="stat-label">Est. Mumbai, India</div></div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-visual reveal">
-    <div class="about-arch-wrap">
-      <div class="about-arch-bg">
-        <img src="images/products-full.jpg" alt="Cadenza product range"/>
-      </div>
+    <div class="about-offset-num">15</div>
+    <div class="about-img-wrap">
+      <img src="images/products-full.jpg" alt="Cadenza product range"/>
+      <div class="about-tag">Quality First</div>
     </div>
-    <div class="about-badge">Quality First</div>
   </div>
   <div class="about-text reveal">
-    <p class="section-label">Our Story</p>
+    <div class="eyebrow"><span class="eyebrow-line"></span>Our Story</div>
     <h2 class="section-title">Crafting <em>Beauty</em><br>at Scale</h2>
-    <div class="divider"></div>
-    <p class="body-copy">Cadenza Industries was founded with a singular mission: to give beauty entrepreneurs and established brands alike access to world-class cosmetics manufacturing. We combine rigorous science with artisanal precision to deliver colour cosmetics that perform.</p>
-    <p class="body-copy">Our state-of-the-art production facility is equipped for high-volume runs as well as small-batch development, ensuring every partner receives the same level of dedication — regardless of order size.</p>
+    <p class="body-copy" style="margin-top:2rem;">Cadenza Enterprises was founded with a singular mission: to give beauty entrepreneurs and established brands alike access to world-class cosmetics manufacturing. We combine rigorous science with artisanal precision to deliver colour cosmetics that perform.</p>
+    <p class="body-copy" style="margin-top:1rem;">Our state-of-the-art production facility handles high-volume runs as well as small-batch development, ensuring every partner receives the same level of dedication — regardless of order size.</p>
     <div class="about-pillars">
       <div class="pillar"><div class="pillar-title">R&amp;D Excellence</div><div class="pillar-copy">In-house formulation chemists developing cutting-edge cosmetic compounds.</div></div>
       <div class="pillar"><div class="pillar-title">Custom Shades</div><div class="pillar-copy">Proprietary colour-matching technology for bespoke pigment development.</div></div>
       <div class="pillar"><div class="pillar-title">Private Label</div><div class="pillar-copy">End-to-end white-label solutions from concept to branded packaging.</div></div>
+      <div class="pillar"><div class="pillar-title">Fast Turnaround</div><div class="pillar-copy">Efficient production scheduling to meet your launch timelines.</div></div>
     </div>
   </div>
 </section>
@@ -662,7 +630,7 @@
 <section id="products">
   <div class="products-header">
     <div class="reveal">
-      <p class="section-label">Our Product Lines</p>
+      <div class="eyebrow"><span class="eyebrow-line"></span>Our Product Lines</div>
       <h2 class="section-title">Four Categories.<br><em>Infinite Possibilities.</em></h2>
     </div>
     <a class="btn-ghost reveal" href="#contact">Request Catalogue</a>
@@ -671,146 +639,192 @@
     <div class="product-card reveal">
       <div class="product-img-wrap"><img src="images/eyeliner.jpg" alt="Eyeliner"/></div>
       <div class="product-body">
+        <div class="product-num">01</div>
         <div class="product-name">Eyeliner</div>
         <div class="product-desc">Liquid, gel, and kohl eyeliners engineered for precise application and lasting wear. Available in pencil, pen, and pot formats with long-wear, waterproof variants.</div>
-        <div class="product-tag">Explore Line</div>
+        <div class="product-tag"><span class="product-tag-line"></span>Explore Line</div>
       </div>
     </div>
     <div class="product-card reveal">
       <div class="product-img-wrap"><img src="images/mascara.jpg" alt="Mascara"/></div>
       <div class="product-body">
+        <div class="product-num">02</div>
         <div class="product-name">Mascara</div>
         <div class="product-desc">Volumising, lengthening, and curling mascaras formulated with advanced film-forming polymers. Tubing, waterproof, and natural fibre formulations available.</div>
-        <div class="product-tag">Explore Line</div>
+        <div class="product-tag"><span class="product-tag-line"></span>Explore Line</div>
       </div>
     </div>
     <div class="product-card reveal">
       <div class="product-img-wrap"><img src="images/kajal.jpg" alt="Kajal"/></div>
       <div class="product-body">
+        <div class="product-num">03</div>
         <div class="product-name">Kajal</div>
         <div class="product-desc">Richly pigmented kohl kajal pencils for intense, smudgeable definition. Traditional formulations alongside modern long-wear versions with conditioning ingredients.</div>
-        <div class="product-tag">Explore Line</div>
+        <div class="product-tag"><span class="product-tag-line"></span>Explore Line</div>
       </div>
     </div>
     <div class="product-card reveal">
       <div class="product-img-wrap"><img src="images/compact.jpg" alt="Compact Powder"/></div>
       <div class="product-body">
+        <div class="product-num">04</div>
         <div class="product-name">Compact Powder</div>
         <div class="product-desc">Pressed compact powders delivering buildable coverage and a flawless finish. Foundation, setting, and bronzing variants with bespoke shade development.</div>
-        <div class="product-tag">Explore Line</div>
+        <div class="product-tag"><span class="product-tag-line"></span>Explore Line</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CADENZA — RADIAL -->
+<!-- WHY CADENZA -->
 <section id="why">
   <div class="why-header reveal">
-    <p class="section-label">Why Partner With Us</p>
+    <div class="eyebrow"><span class="eyebrow-line"></span>Why Partner With Us</div>
     <h2 class="section-title">The <em>Standard</em><br>Your Brand Deserves</h2>
-    <p class="body-copy" style="margin-top:1rem;">In the competitive beauty market, manufacturing quality is your invisible signature. Cadenza gives your brand the technical foundation to deliver products customers trust and recommend.</p>
+    <p class="body-copy" style="margin-top:1.5rem;max-width:500px;">In the competitive beauty market, manufacturing quality is your invisible signature. Cadenza gives your brand the technical foundation to deliver products customers trust and recommend.</p>
   </div>
-
-  <div class="radial-wrap">
-    <!-- Left col item 1 -->
-    <div class="radial-item reveal">
-      <div class="radial-icon">🧪</div>
-      <div class="radial-title">Bespoke Formulation</div>
-      <div class="radial-copy">Custom formulas tailored to your brand's performance targets, ingredient preferences, and positioning.</div>
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div>
+      <div class="why-title">Bespoke Formulation</div>
+      <div class="why-copy">Custom formulas tailored to your brand's performance targets, ingredient preferences, and market positioning.</div>
     </div>
-
-    <!-- Centre image -->
-    <div class="radial-center">
-      <img src="images/products-full.jpg" alt="Cadenza products"/>
+    <div class="why-item reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+      <div class="why-title">Regulatory Expertise</div>
+      <div class="why-copy">Compliance documentation for domestic and export markets, including EU, US FDA, and GCC standards.</div>
     </div>
-
-    <!-- Right col item 1 -->
-    <div class="radial-item reveal">
-      <div class="radial-icon">📋</div>
-      <div class="radial-title">Regulatory Expertise</div>
-      <div class="radial-copy">Compliance documentation for domestic and export markets, including EU, US FDA, and GCC.</div>
+    <div class="why-item reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z"/></svg></div>
+      <div class="why-title">Flexible MOQ</div>
+      <div class="why-copy">Competitive minimums enabling fast brand launches without tying up capital in excess inventory.</div>
     </div>
-
-    <!-- Left col item 2 -->
-    <div class="radial-item reveal">
-      <div class="radial-icon">⚖️</div>
-      <div class="radial-title">Flexible MOQ</div>
-      <div class="radial-copy">Competitive minimums enabling fast brand launches without tying up capital in excess inventory.</div>
+    <div class="why-item reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></div>
+      <div class="why-title">Packaging Solutions</div>
+      <div class="why-copy">From component sourcing to fully branded secondary packaging — end-to-end procurement.</div>
     </div>
-
-    <!-- Right col item 2 -->
-    <div class="radial-item reveal">
-      <div class="radial-icon">📦</div>
-      <div class="radial-title">Packaging Solutions</div>
-      <div class="radial-copy">From component sourcing to fully branded secondary packaging procurement.</div>
+    <div class="why-item reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg></div>
+      <div class="why-title">Quality Assurance</div>
+      <div class="why-copy">Multi-stage QC ensuring every batch meets our strict stability, safety, and colour-accuracy benchmarks.</div>
     </div>
-
-    <!-- Bottom spanning item -->
-    <div class="radial-item reveal">
-      <div class="radial-icon">✅</div>
-      <div class="radial-title">Quality Assurance</div>
-      <div class="radial-copy">Multi-stage QC ensuring every batch meets our strict stability, safety, and colour-accuracy benchmarks before dispatch.</div>
+    <div class="why-cta-cell reveal">
+      <blockquote>"Your brand's quality is only as good as its manufacturer."</blockquote>
+      <a class="btn-primary" href="#contact">Start a Conversation</a>
     </div>
-  </div>
-  <div style="text-align:center;margin-top:4rem;">
-    <a class="btn-primary reveal" href="#contact">Start a Conversation</a>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section id="process">
   <div class="process-header reveal">
-    <p class="section-label">How We Work</p>
+    <div class="eyebrow"><span class="eyebrow-line"></span>How We Work</div>
     <h2 class="section-title">From Concept<br>to <em>Shelf-Ready</em></h2>
   </div>
   <div class="process-steps">
-    <div class="step reveal"><div class="step-num">01</div><div class="step-title">Consultation</div><div class="step-copy">We understand your brand vision, target market, and product specifications in depth.</div></div>
-    <div class="step reveal"><div class="step-num">02</div><div class="step-title">Formulation</div><div class="step-copy">Our R&amp;D lab develops and refines custom formulas until performance benchmarks are met.</div></div>
-    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Sampling</div><div class="step-copy">Pre-production samples sent for your approval — shade, texture, and packaging assessment.</div></div>
-    <div class="step reveal"><div class="step-num">04</div><div class="step-title">Production</div><div class="step-copy">Full-scale manufacturing under strict conditions with real-time quality monitoring.</div></div>
-    <div class="step reveal"><div class="step-num">05</div><div class="step-title">Delivery</div><div class="step-copy">Finished, tested, and packaged products dispatched to your warehouse or directly to market.</div></div>
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">Consultation</div>
+      <div class="step-copy">We understand your brand vision, target market, and product specifications in depth.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-title">Formulation</div>
+      <div class="step-copy">Our R&amp;D lab develops and refines custom formulas until performance benchmarks are met.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-title">Sampling</div>
+      <div class="step-copy">Pre-production samples for your approval — shade, texture, and packaging assessment.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <div class="step-title">Production</div>
+      <div class="step-copy">Full-scale manufacturing under strict conditions with real-time quality monitoring.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">05</div>
+      <div class="step-title">Delivery</div>
+      <div class="step-copy">Finished, tested, and packaged products dispatched to your warehouse or directly to market.</div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <p class="section-label">Get In Touch</p>
-  <h2 class="section-title">Let's Build<br>Something <em>Beautiful</em></h2>
-  <div class="divider"></div>
-  <p class="body-copy">Whether you're launching your first product line or scaling an established brand, we'd love to hear about your manufacturing needs. Our team will respond within one business day.</p>
-  <div class="contact-details reveal">
-    <div class="contact-detail">
-      <a href="https://maps.google.com/?q=H-225,+Saki+Vihar+Rd,+Ansa+Industrial+Estate,+Chandivali,+Saki+Naka,+Mumbai,+Maharashtra+400072,+India" target="_blank" rel="noopener" class="contact-detail-icon" style="text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </a>
-      <span>H-225, Saki Vihar Rd, Ansa Industrial Estate, Chandivali, Saki Naka, Mumbai, Maharashtra 400072, India</span>
-    </div>
-    <div class="contact-detail">
-      <div class="contact-detail-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <div class="contact-grid">
+    <div class="contact-text reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Get In Touch</div>
+      <h2 class="section-title">Let's Build<br>Something <em>Beautiful</em></h2>
+      <div class="contact-divider"></div>
+      <p class="body-copy">Whether you're launching your first product line or scaling an established brand, we'd love to hear about your manufacturing needs. Our team will respond within one business day.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <a href="https://maps.google.com/?q=H-225,+Saki+Vihar+Rd,+Ansa+Industrial+Estate,+Chandivali,+Saki+Naka,+Mumbai,+Maharashtra+400072,+India" target="_blank" rel="noopener" class="contact-detail-icon" style="text-decoration:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </a>
+          <div class="contact-detail-body">H-225, Saki Vihar Rd, Ansa Industrial Estate,<br>Chandivali, Saki Naka, Mumbai 400072, India</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </div>
+          <div class="contact-detail-body"><a href="mailto:cadenza.entp@gmail.com">cadenza.entp@gmail.com</a></div>
+        </div>
       </div>
-      <span><a href="mailto:cadenza.entp@gmail.com" style="color:inherit;text-decoration:none;">cadenza.entp@gmail.com</a></span>
+    </div>
+    <div class="contact-aside reveal">
+      <blockquote class="contact-aside-quote">
+        "In the competitive beauty market, manufacturing quality is your invisible signature."
+      </blockquote>
+      <a class="btn-primary" href="mailto:cadenza.entp@gmail.com">Send an Enquiry</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Cadenza <span>Industries</span></div>
-  <div class="footer-copy">© 2026 Cadenza Industries Pvt. Ltd. All rights reserved.</div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#hero">Cadenza <em>Enterprises</em></a>
+      <p>A specialist manufacturer of premium colour cosmetics, partnering with beauty brands across India and beyond since 2009.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Product Lines</a></li>
+        <li><a href="#why">Why Cadenza</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:cadenza.entp@gmail.com">cadenza.entp@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Ansa+Industrial+Estate+Mumbai" target="_blank" rel="noopener">Mumbai, India</a></li>
+        <li style="color:rgba(250,247,243,.28);font-size:.74rem;margin-top:.4rem;">Mon–Sat · 9am–6pm IST</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Cadenza Enterprises Pvt. Ltd. All rights reserved.</div>
+    <div class="footer-tagline">Where Colour Meets Craft</div>
+  </div>
 </footer>
 
 <script>
 (function () {
   'use strict';
 
-  /* ── Navbar scroll ── */
+  /* Navbar scroll */
   var navbar = document.getElementById('navbar');
   function onScroll() { navbar.classList.toggle('scrolled', window.scrollY > 50); }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
 
-  /* ── Smooth scroll ── */
+  /* Smooth scroll */
   document.addEventListener('click', function(e) {
     var anchor = e.target.closest('a[href^="#"]');
     if (!anchor) return;
@@ -822,7 +836,7 @@
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight, behavior:'smooth' });
   });
 
-  /* ── Mobile menu ── */
+  /* Mobile menu */
   var hamburger  = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', function() {
@@ -837,17 +851,17 @@
   };
   document.addEventListener('keydown', function(e) { if (e.key==='Escape') closeMob(); });
 
-  /* ── Scroll reveal ── */
+  /* Scroll reveal */
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, i) {
       if (entry.isIntersecting) {
         setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold:0.08 });
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  /* ── Custom cursor ── */
+  /* Custom cursor */
   var dot  = document.getElementById('cursor-dot');
   var ring = document.getElementById('cursor-ring');
   var mx = 0, my = 0, rx = 0, ry = 0;
@@ -861,11 +875,11 @@
     requestAnimationFrame(animateRing);
   })();
 
-  /* ── Hero parallax ── */
-  var heroBg = document.querySelector('.hero-bg-blobs');
+  /* Subtle parallax on hero image */
+  var heroVisual = document.querySelector('.hero-visual');
   window.addEventListener('scroll', function() {
-    if (heroBg && window.scrollY < window.innerHeight) {
-      heroBg.style.transform = 'translateY(' + (window.scrollY * 0.25) + 'px)';
+    if (heroVisual && window.scrollY < window.innerHeight) {
+      heroVisual.style.transform = 'translateY(' + (window.scrollY * 0.07) + 'px)';
     }
   }, { passive:true });
 
